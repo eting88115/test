@@ -21,7 +21,7 @@
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
      <i class="fa fa-remove"></i>
   </a>
-   <%@ include file="left-stu.jsp" %>
+
  </nav>
  
 <!-- Header -->
