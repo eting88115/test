@@ -88,7 +88,7 @@ request.getParameter("email") !=null){
 
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "請輸入原設定的信箱">
-						<input class="input100" type="password" name="TrPwd"  required>
+						<input class="input100" type="email" name="email"  required>
 						<span class="focus-input100"></span>
 					</div>
 
