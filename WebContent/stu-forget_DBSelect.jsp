@@ -15,7 +15,7 @@ if(request.getParameter("stuID") !=null &&
 	if(members.next()){
 		session.setAttribute("accessID",request.getParameter("stuID"));
 		//session.setMaxInactiveInterval(20); ¦Û°Êµn¥X
-		response.sendRedirect("login.jsp");
+		response.sendRedirect("http://localhost:8061/test/login.jsp");
 	}else
 		response.sendRedirect("login.jsp");
 }
