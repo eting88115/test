@@ -3,18 +3,18 @@
 <%@page import="java.sql.*"%>
 <jsp:useBean id='objDBConfig' scope='session' class='test2.DBConfig' />
 <%
-if(request.getParameter("stuID") !=null &&
-	request.getParameter("stuPwd") !=null){
+if(request.getParameter("memberId") !=null &&
+	request.getParameter("memberPwd") !=null){
 	Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
 	Statement smt= con.createStatement();
-	String getpaperdata = "SELECT * FROM stuData WHERE stuID='"+
-			request.getParameter("stuID")+"' AND stuPwd='" +
-			request.getParameter("stuPwd")+"'";
+	String getpaperdata = "SELECT * FROM leelab WHERE memberId='"+
+			request.getParameter("memberId")+"' AND memberPwd='" +
+			request.getParameter("memberPwd")+"'";
 	ResultSet paperrs = smt.executeQuery(getpaperdata);
 	if(paperrs.next()){
-		session.setAttribute("accessID",request.getParameter("stuID"));
+		session.setAttribute("accessId",request.getParameter("memberId"));
 		//session.setMaxInactiveInterval(20); 自動登出
-		response.sendRedirect("str-front.jsp");
+		response.sendRedirect("index.jsp");
 	}else
 		out.println("帳號密碼不符！請重新登入");
 }
@@ -55,7 +55,7 @@ if(request.getParameter("stuID") !=null &&
 			<form class="login100-form validate-form flex-sb flex-w" action="login_DBSelect.jsp">
 					 
 					<span class="login100-form-title p-b-53">
-						學生登入
+						登入系統
 						<%if (request.getParameter("status")!="" && request.getParameter("status")!=null){
 							if(request.getParameter("status").equals("loginerror")){ %>
 							<p><font color="red">帳號或密碼錯誤，請重新輸入!</font></p>
@@ -78,7 +78,7 @@ if(request.getParameter("stuID") !=null &&
 						</span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate="請輸入帳號">
-						<input class="input100" type="text" name="stuID" required >
+						<input class="input100" type="text" name="memberId" required >
 						<span class="focus-input100"></span>
 					</div>
 					
@@ -92,7 +92,7 @@ if(request.getParameter("stuID") !=null &&
 						</a>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "請輸入密碼">
-						<input class="input100" type="password" name="stuPwd"  required>
+						<input class="input100" type="password" name="memberPwd"  required>
 						<span class="focus-input100"></span>
 					</div>
 

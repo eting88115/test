@@ -77,7 +77,7 @@ request.getParameter("email") !=null){
 						</span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate="½Ð¿é¤J±b¸¹">
-						<input class="input100" type="text" name="TrID" required >
+						<input class="input100" type="text" name="stuID" required >
 						<span class="focus-input100"></span>
 					</div>
 					
