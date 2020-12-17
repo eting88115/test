@@ -87,7 +87,8 @@ if(request.getParameter("stuID") !=null &&
 							±K½X
 						</span>
 
-						<a href="#" class="txt2 bo1 m-l-5">
+						<a href="stu-forget.jsp" class="txt2 bo1 m-l-5">
+						
 							§Ñ°O?
 						</a>
 					</div>
