@@ -18,10 +18,10 @@
     <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
     <a href="stu-about.jsp" class="w3-bar-item w3-button w3-hide-small w3-hover-white">個人資料修改</a>
     <a href="stu-apply.jsp" class="w3-bar-item w3-button w3-hide-small w3-hover-white">宿舍申請表</a>
-    <a href="stu-roomRegistration" class="w3-bar-item w3-button w3-hide-small w3-hover-white">選床位專區</a>
     <a href="https://student.ntunhs.edu.tw/files/11-1002-1545.php?Lang=zh-tw" class="w3-bar-item w3-button w3-hide-small w3-hover-white">校網-宿舍專區</a>
     <a href="stu-qa.jsp" class="w3-bar-item w3-button w3-hide-small w3-hover-white">常見問題QA</a>
-    <a href="front.jsp"><img src="images/LOGO.png" width="261" height="42" style="margin-left:333px"></a>
+    <a><img src="images/LOGO.png" width="200" height="42" style="margin-left:550px"></a>
+    
   </div>
 </div>
 </body>
