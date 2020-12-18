@@ -94,7 +94,7 @@
                 <tr><td><label for="department">¬ì¨t:<%=rs.getString("department") %></label></td>
                     <td><label for="email">«H½c:<%=rs.getString("email") %></label></td></tr><tr><td></td><td></td></tr>
                 <tr><td><label for="classroom">¯Z¯Å:<%=rs.getString("class") %></label></td>
-                    <td><label for="audit">¼f®Öª¬ºA:</label><% String audit = request.getParameter("ApprovalStatus");out.println(audit); %></td></tr><tr><td></td><td></td></tr>
+                    <td><label for="Status">¼f®Öª¬ºA:</label><% String audit = request.getParameter("ApprovalStatus");out.println(ApprovalStatus); %></td></tr><tr><td></td><td></td></tr>
               </table> 
      </div>
            <br>

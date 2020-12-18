@@ -55,7 +55,7 @@
          <font color="#009393" size="5" style="margin-left:550px"><%=rs.getString("stuID") %><%=rs.getString("stuName") %>_申請單</font>
          </table>
 	 <div class="ApplyDetail">
-         <form method="post" action="boss-StuApply2.jsp">
+         <form method="post" action="boss-StuApply_DBSelect.jsp">
             <table border="1" style="margin-left:50px; width: 700px;height: 300px">
                 <tr><td><label for="name">姓名:<%=rs.getString("stuName") %></label></td>
                     <td><label for="address">住址:<%=rs.getString("address") %></label></td></tr><tr><td></td><td></td></tr>
@@ -66,8 +66,8 @@
                 <tr><td><label for="department">科系:<%=rs.getString("department") %></label></td>
                     <td><label for="email">信箱:<%=rs.getString("email") %></label></td></tr><tr><td></td><td></td></tr>
                 <tr><td><label for="classroom">班級:<%=rs.getString("class") %></label></td>
-                    <td><label for="audit">審核狀態:</label>
-                        <select name="audit" id="audit">
+                    <td><label for="Status">審核狀態:</label>
+                        <select name="ApprovalStatus" id="ApprovalStatus" required>
                             <option value="0" selected>請選擇</option>
                             <option value="通過">通過</option>
                             <option value="未通過">未通過</option>
