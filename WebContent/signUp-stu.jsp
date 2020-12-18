@@ -38,7 +38,7 @@
 					<span class="login100-form-title p-b-53">
 						學生註冊
 						<%if (request.getParameter("status")!="" && request.getParameter("status")!=null){
-							if(request.getParameter("status").equals("IDexist")){ %>
+							if(request.getParameter("status").equals("stuID")){ %>
 							<p><font color="red">帳號已存在，請登入或重新註冊!</font></p>
 						<%}else{} }%>
     					<p>請填寫資料以建立帳號</p>

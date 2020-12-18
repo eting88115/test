@@ -12,12 +12,13 @@
 	String stuID = new String(request.getParameter("stuID"));
 	String email = new String(request.getParameter("email"));
 	String stuPwd = new String(request.getParameter("stuPwd"));
-	try{
+	try 
+	{
 		smt.execute("INSERT INTO stuID (stuID, email, stuPwd) VALUES('"+stuID+"','"+email+"','"+stuPwd+"')");
 		con.close();
 		response.sendRedirect("login.jsp?status=newmember");
 	}catch (Exception e){
-		response.sendRedirect("signUp.jsp?status=IDexist");
+		response.sendRedirect("signUp-stu.jsp?status=IDexist");
 	}
 	%>
 </body>
