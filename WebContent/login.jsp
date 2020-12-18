@@ -108,7 +108,7 @@ if(request.getParameter("stuID") !=null &&
 							尚無帳號？
 						</span>
 
-						<a href="signUp.jsp" class="txt2 bo1">
+						<a href="signUp-stu.jsp" class="txt2 bo1">
 							立馬註冊
 						</a>
 					</div>

@@ -3,60 +3,98 @@
 <%@page import="java.sql.*"%>
 <jsp:useBean id='objDBConfig' scope='session' class='test2.DBConfig' />
 <!DOCTYPE html>
-<html lang="tc">
-<head>
-<meta charset="BIG5">
-<title>stu-register</title>
+<html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css\styles.css" >
-<link rel="stylesheet" href="css\styles2.css" >
-<link rel="stylesheet" href="css\styles3.css" >
-<link rel="stylesheet" href="css\styles4.css">
-<link rel="stylesheet" href="css\styles5.css">
-
-</head>
+<meta charset="BIG5">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="assets/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="assets/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="assets/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/css/util.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+<!--===============================================================================================-->
 <body>
 
-<!-- Header --->
-<%@ include file="menu-stu.jsp" %>
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
-<div class="w3">
-
-  <div class="w3-row w3-padding-64">
-    <div class="form-fields d-grid"> 
-    </div>
-  </div>
-<form action="signUp_DB.jsp">
-  <div class="w3-row" style="height:380px">
-  <form class="login100-form validate-form flex-sb flex-w" action="signUp_DBSelect.jsp">
-    <div class="post" style=" margin-left: 600px">
-      <h1 class="w3-text-teal"><b>註冊帳號</b></h1>
-      <%if (request.getParameter("status")!="" && request.getParameter("status")!=null){
+<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+			<form class="login100-form validate-form flex-sb flex-w" action="signUp_DBSelect.jsp">
+					 
+					<span class="login100-form-title p-b-53">
+						學生註冊
+						<%if (request.getParameter("status")!="" && request.getParameter("status")!=null){
 							if(request.getParameter("status").equals("IDexist")){ %>
 							<p><font color="red">帳號已存在，請登入或重新註冊!</font></p>
 						<%}else{} }%>
-    </div>
-         <table>
-              <tr><td><label for="stuID">學號:</label><input type="text" name="stuID" placeholder="請輸入學號" required></td>
-                  <td><label for="stuPW">密碼:</label><input type="text" name="stuPW" placeholder="請輸入密碼" required></td></tr><tr><td></td><td></td></tr>
-              <tr><td><label for="stuName">姓名:</label><input type="text" name="stuName" placeholder="請輸入姓名" required></td>
-                  <td><label for="subject">科系:</label><input type="text" name="subject" placeholder="請輸入科系" required></td></tr><tr><td></td><td></td></tr>
-              <tr><td><label for="class">班級:</label><input type="text" name="class" placeholder="請輸入班級" required></td>
-                  <td><label for="phone">電話:</label><input type="text" name="phone" placeholder="請輸入電話" required></td></tr><tr><td></td><td></td></tr>
-              <tr><td><label for="address">地址:</label><input type="text" name="address" placeholder="請輸入地址" required></td>
-                  <td><label for="email">信箱:</label><input type="text" name="email" placeholder="請輸入電子郵件" required></td></tr><tr><td></td><td></td></tr>
-         </table>
-         <div class="login-button2">
-            <input type="submit" value="確認註冊">
-            <input type="reset" value="取消註冊">
-         </div>
-  </form>
-  </div>
-  </form>
-  </div>
-<!-- Footer -->
-<%@ include file="pageend.jsp" %>
+    					<p>請填寫資料以建立帳號</p>
+    				</span>   
+					<div class="p-t-31 p-b-9">
+						<span class="txt1">帳號
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="請輸入帳號">
+						<input class="input100" type="text" name="stuID" required >
+						<span class="focus-input100"></span>
+					</div>
+					<div class="p-t-31 p-b-9">
+						<span class="txt1">信箱
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="請輸入信箱">
+						<input class="input100" type="text" name="email" required >
+						<span class="focus-input100"></span>
+					</div>
+					<div class="p-t-31 p-b-9">
+						<span class="txt1">密碼
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "請輸入密碼">
+						<input class="input100" type="password" name="stuPwd"  required>
+						<span class="focus-input100"></span>
+					</div>
+					<div class="container-login100-form-btn m-t-17">
+						<button class="login100-form-btn" a href="login.jsp">
+							註冊
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/vendor/bootstrap/js/popper.js"></script>
+	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/vendor/daterangepicker/moment.min.js"></script>
+	<script src="assets/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/js/main.js"></script>
+	
+</body>
 </html>

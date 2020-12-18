@@ -9,10 +9,11 @@
 	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 	Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
 	Statement smt= con.createStatement();
-	String memberId = new String(request.getParameter("memberId"));
-	String memberPwd = new String(request.getParameter("memberPwd"));
+	String stuID = new String(request.getParameter("stuID"));
+	String email = new String(request.getParameter("email"));
+	String stuPwd = new String(request.getParameter("stuPwd"));
 	try{
-		smt.execute("INSERT INTO leelab (memberId, memberPwd) VALUES('"+memberId+"','"+memberPwd+"')");
+		smt.execute("INSERT INTO stuID (stuID, email, stuPwd) VALUES('"+stuID+"','"+email+"','"+stuPwd+"')");
 		con.close();
 		response.sendRedirect("login.jsp?status=newmember");
 	}catch (Exception e){
