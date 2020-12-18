@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=BIG5"
-    pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="utf-8"%>
 <%@page import="java.sql.*"%>
 <!DOCTYPE html>
 <html lang="tc">
