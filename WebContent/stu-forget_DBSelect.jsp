@@ -12,11 +12,17 @@ if(request.getParameter("stuID") !=null &&
 			request.getParameter("stuID")+"' AND email='" +
 			request.getParameter("email")+"'";
 	ResultSet members = smt.executeQuery(getMemberData);
+		
 	if(members.next()){
-		session.setAttribute("accessID",request.getParameter("stuID"));		
+		session.setAttribute("accessID",request.getParameter("stuID"));
 		//session.setMaxInactiveInterval(20); 自動登出
-		response.sendRedirect("login.jsp");
+		
+  %>      
+      
+       <p>您的密碼為 }<%=members.getString("stuPwd")%>, 請回到首頁重新登入謝謝!</p>
+        
+
 	}else
-		response.sendRedirect("login.jsp?status=login");
+		out.println("帳號密碼不符！請重新登入");
 }
-%>
+ 
