@@ -36,7 +36,7 @@
 			<form class="login100-form validate-form flex-sb flex-w" action="signUp-tr_DBSelect.jsp">
 					 
 					<span class="login100-form-title p-b-53">
-						老師註冊
+						宿舍老師註冊
 						<%if (request.getParameter("status")!="" && request.getParameter("status")!=null){
 							if(request.getParameter("status").equals("TrID")){ %>
 							<p><font color="red">帳號已存在，請登入或重新註冊!</font></p>
