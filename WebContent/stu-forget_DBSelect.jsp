@@ -13,7 +13,7 @@ if(request.getParameter("stuID") !=null &&
 			request.getParameter("email")+"'";
 	ResultSet members = smt.executeQuery(getMemberData);
 	if(members.next()){
-		session.setAttribute("accessID",request.getParameter("stuID"));
+		session.setAttribute("accessID",request.getParameter("stuID"));		
 		//session.setMaxInactiveInterval(20); ¦Û°Êµn¥X
 		response.sendRedirect("login.jsp");
 	}else

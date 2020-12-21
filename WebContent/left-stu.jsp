@@ -20,32 +20,24 @@
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
      <i class="fa fa-remove"></i>
   </a>
-<%
-    Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-    Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
-    Statement smt= con.createStatement();
-	String sql = "SELECT * FROM stuData where stuName";
-	ResultSet rs = smt.executeQuery(sql);
-	%>
-	取出資料表資料
+
+	
 	<table>
+	
 	<tr>
-	<th>姓名</th>
+		 <td>  </a></td>
 	</tr>
-	<%
-	while(rs.next()){%>
-	<tr>
-		 <td><%=rs.getString("stuName")%></td>
-	</tr>
-	<%}	
-	con.close();
-	%>
-	<p>，您好</p>
+	
+	<p><%
+					if ((session.getAttribute("accessID") == null) || (session.getAttribute("accessID") == "")){
+						out.println("");
+					}else{
+						out.println(session.getAttribute("accessID"));
+					}
+			 %>您好</p>
 	</table>
 	
-</body>
-
-   
+ 
      <form action="">
         <div class="activity-time">
           <ul>
