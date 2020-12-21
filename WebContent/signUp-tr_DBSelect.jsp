@@ -9,16 +9,16 @@
 	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 	Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
 	Statement smt= con.createStatement();
-	String stuID = new String(request.getParameter("stuID"));
+	String TrID = new String(request.getParameter("TrID"));
 	String email = new String(request.getParameter("email"));
-	String stuPwd = new String(request.getParameter("stuPwd"));
+	String TrPwd = new String(request.getParameter("TrPwd"));
 	try 
 	{
-		smt.execute("INSERT INTO stuforget (stuID, email, stuPwd) VALUES('"+stuID+"','"+email+"','"+stuPwd+"')");
+		smt.execute("INSERT INTO TrData (TrID, email, TrPwd) VALUES('"+TrID+"','"+email+"','"+TrPwd+"')");
 		con.close();
-		response.sendRedirect("login.jsp?status=newmember");
+		response.sendRedirect("login-tr.jsp?status=newmember");
 	}catch (Exception e){
-		response.sendRedirect("signUp-stu.jsp?status=IDexist");
+		response.sendRedirect("signUp-tr.jsp?status=IDexist");
 	}
 	%>
 </body>

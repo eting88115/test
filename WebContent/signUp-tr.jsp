@@ -33,12 +33,12 @@
 <div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
-			<form class="login100-form validate-form flex-sb flex-w" action="signUp_DBSelect.jsp">
+			<form class="login100-form validate-form flex-sb flex-w" action="signUp-tr_DBSelect.jsp">
 					 
 					<span class="login100-form-title p-b-53">
-						學生註冊
+						老師註冊
 						<%if (request.getParameter("status")!="" && request.getParameter("status")!=null){
-							if(request.getParameter("status").equals("stuID")){ %>
+							if(request.getParameter("status").equals("TrID")){ %>
 							<p><font color="red">帳號已存在，請登入或重新註冊!</font></p>
 						<%}else{} }%>
     					<p>請填寫資料以建立帳號</p>
@@ -48,7 +48,7 @@
 						</span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate="請輸入帳號">
-						<input class="input100" type="text" name="stuID" required >
+						<input class="input100" type="text" name="TrID" required >
 						<span class="focus-input100"></span>
 					</div>
 					<div class="p-t-31 p-b-9">
@@ -64,11 +64,11 @@
 						</span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "請輸入密碼">
-						<input class="input100" type="password" name="stuPwd"  required>
+						<input class="input100" type="password" name="TrPwd"  required>
 						<span class="focus-input100"></span>
 					</div>
 					<div class="container-login100-form-btn m-t-17">
-						<button class="login100-form-btn" a href="login.jsp">
+						<button class="login100-form-btn" a href="login-tr.jsp">
 							註冊
 						</button>
 					</div>
