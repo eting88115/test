@@ -1,11 +1,9 @@
-<%@page contentType="text/html; charset=BIG5"%>
-<%@page pageEncoding="BIG5"%>
-<%@page import="java.sql.*"%>
-<jsp:useBean id='objDBConfig' scope='session' class='test2.DBConfig' />
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8" import="java.sql.*"%>
 <!DOCTYPE html>
 <html lang="tc">
 <head>
-<meta charset="BIG5">
+<meta charset="utf-8">
 <title>left-stu</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css\styles.css" >
@@ -16,39 +14,36 @@
 </head>
 <body>
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar"></nav>
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
      <i class="fa fa-remove"></i>
   </a>
-
-	
-	<table>
-	
-	<tr>
-		 <td>  </a></td>
-	</tr>
-	
-	<p><%
-					if ((session.getAttribute("accessID") == null) || (session.getAttribute("accessID") == "")){
-						out.println("");
-					}else{
-						out.println(session.getAttribute("accessID"));
-					}
-			 %>╠z╕n</p>
-	</table>
-	
+<head>
+<meta charset="utf-8">
+<title>JSP Page</title>
+</head>
+<body>
+<%
+ String name = request.getParameter("account");
  
+%>
+Hi,<%=name %>Ф┌╗Е╔╫О╪ <br>
+Е╖⌠Е░█О╪ <%=name %><br>
+
+</body>
+
+   
      <form action="">
         <div class="activity-time">
           <ul>
-            <li>╟e╔X╠J╙ы╔с╫п</li>(4/18~4/25)<br>
-            <li>╛d╛щ╔с╫п╣╡╙G </li>(4/28)<br>
-            <li>╖и╕Л╘Бер</li>(5/1)<br>
-            <li>©О╖и╕Л</li>(5/3~5/11)<br>
-            <li>╜т╦и╔с╫п</li>(5/13~5/18)<br>
+            <li>И─│Е┤╨Е╝©Х┬█Г■ЁХ╚▀</li>(4/18~4/25)<br>
+            <li>Ф÷╔Г°▀Г■ЁХ╚▀Г╣░Ф·° </li>(4/28)<br>
+            <li>Е╨┼Д╫█Ф┼╫Г╠╓</li>(5/1)<br>
+            <li>И│╦Е╨┼Д╫█</li>(5/3~5/11)<br>
+            <li>Е─≥Хё°Г■ЁХ╚▀</li>(5/13~5/18)<br>
           </ul>
           <div class="login-button">
-            <input type="submit" id="logout" value="╣n╔X"/>
+            <input type="submit" id="logout" value="Г≥╩Е┤╨"/>
             <input type="hidden" name="Logout" value="true"/><br></br>
           </div>
         </div>
