@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8" import="java.sql.*"%>
+<%@ page language="java" contentType="text/html; charset=BIG5"
+    pageEncoding="BIG5" import="java.sql.*"%>
 <!DOCTYPE html>
 <html lang="tc">
 <head>
-<meta charset="utf-8">
+<meta charset="BIG5">
 <title>left-stu</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css\styles.css" >
@@ -27,8 +27,8 @@
  String name = request.getParameter("account");
  
 %>
-Hi,<%=name %>Ф┌╗Е╔╫О╪ <br>
-Е╖⌠Е░█О╪ <%=name %><br>
+Hi,<%=name %>╠z╕n║G<br>
+╘m╕W║G<%=name %><br>
 
 </body>
 
@@ -36,14 +36,14 @@ Hi,<%=name %>Ф┌╗Е╔╫О╪ <br>
      <form action="">
         <div class="activity-time">
           <ul>
-            <li>И─│Е┤╨Е╝©Х┬█Г■ЁХ╚▀</li>(4/18~4/25)<br>
-            <li>Ф÷╔Г°▀Г■ЁХ╚▀Г╣░Ф·° </li>(4/28)<br>
-            <li>Е╨┼Д╫█Ф┼╫Г╠╓</li>(5/1)<br>
-            <li>И│╦Е╨┼Д╫█</li>(5/3~5/11)<br>
-            <li>Е─≥Хё°Г■ЁХ╚▀</li>(5/13~5/18)<br>
+            <li>╟e╔X╠J╙ы╔с╫п</li>(4/18~4/25)<br>
+            <li>╛d╛щ╔с╫п╣╡╙G </li>(4/28)<br>
+            <li>╖и╕Л╘Бер</li>(5/1)<br>
+            <li>©О╖и╕Л</li>(5/3~5/11)<br>
+            <li>╜т╦и╔с╫п</li>(5/13~5/18)<br>
           </ul>
           <div class="login-button">
-            <input type="submit" id="logout" value="Г≥╩Е┤╨"/>
+            <input type="submit" id="logout" value="╣n╔X"/>
             <input type="hidden" name="Logout" value="true"/><br></br>
           </div>
         </div>
