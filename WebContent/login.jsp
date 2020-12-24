@@ -85,13 +85,7 @@ if(request.getParameter("stuID") !=null &&
 					<div class="p-t-13 p-b-9">
 						<span class="txt1">
 							±K½X
-							<p><%
-					if ((session.getAttribute("accessID") == null) || (session.getAttribute("accessID") == "")){
-						out.println("");
-					}else{
-						out.println(session.getAttribute("accessID"));
-					}
-			 %></p>
+							<p>  </p>
 						</span>
 
 						<a href="stu-forget.jsp" class="txt2 bo1 m-l-5">

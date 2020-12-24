@@ -3,21 +3,22 @@
 <%@page import="java.sql.*"%>
 <jsp:useBean id='objDBConfig' scope='session' class='test2.DBConfig' />
 <%
-if(request.getParameter("stuID") !=null &&
-request.getParameter("email") !=null){
+if(request.getParameter("memberID") !=null &&
+	request.getParameter("memberPwd") !=null){
 	Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
 	Statement smt= con.createStatement();
-	String getpaperdata = "SELECT * FROM stuforget WHERE stuID='"+
-			request.getParameter("stuID")+"' AND email='" +
-			request.getParameter("email")+"'";
+	String getpaperdata = "SELECT * FROM memberData WHERE memberID='"+
+			request.getParameter("memberID")+"' AND memberPwd='" +
+			request.getParameter("memberPwd")+"'";
 	ResultSet paperrs = smt.executeQuery(getpaperdata);
 	if(paperrs.next()){
-		session.setAttribute("accessId",request.getParameter("stuID"));
+		session.setAttribute("accessID",request.getParameter("memberID"));
 		//session.setMaxInactiveInterval(20); 自動登出
 		response.sendRedirect("login.jsp");
 	}else
-		out.println("請註冊帳號");
-}%>
+		out.println("無此帳號");
+}
+%>
 <html>
 <head><title>忘記密碼</title></head>
 <meta name="viewport" content="width=device-width, initial-scale=1">

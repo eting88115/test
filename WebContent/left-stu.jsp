@@ -1,7 +1,7 @@
 <%@page contentType="text/html; charset=BIG5"%>
 <%@page pageEncoding="BIG5"%>
 <%@page import="java.sql.*"%>
-<jsp:useBean id='objDBConfig' scope='session' class='test2.DBConfig' />
+
 
 <html >
 <head>
