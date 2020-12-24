@@ -78,7 +78,7 @@ if(request.getParameter("TrID") !=null &&
 						</span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate="請輸入帳號">
-						<input class="input100" type="text" name="TrID" required >
+						<input class="input100" type="text" name="memberID" required >
 						<span class="focus-input100"></span>
 					</div>
 					
@@ -92,7 +92,7 @@ if(request.getParameter("TrID") !=null &&
 						</a>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "請輸入密碼">
-						<input class="input100" type="password" name="TrPwd"  required>
+						<input class="input100" type="password" name="memberPwd"  required>
 						<span class="focus-input100"></span>
 					</div>
 
@@ -101,15 +101,7 @@ if(request.getParameter("TrID") !=null &&
 							登入
 						</button>
 					</div>
-
-					<div class="w-full text-center p-t-55">
-						<span class="txt2">
-							尚無帳號？
-						</span>
-
-						<a href="signUp-tr.jsp" class="txt2 bo1">
-							立馬註冊
-						</a>
+					
 					</div>
 				</form>
 			</div>
