@@ -78,7 +78,7 @@ if(request.getParameter("stuID") !=null &&
 						</span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate="請輸入帳號">
-						<input class="input100" type="text" name="stuID" required >
+						<input class="input100" type="text" name="memberID" required >
 						<span class="focus-input100"></span>
 					</div>
 					
@@ -100,7 +100,7 @@ if(request.getParameter("stuID") !=null &&
 						</a>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "請輸入密碼">
-						<input class="input100" type="password" name="stuPwd"  required>
+						<input class="input100" type="password" name="memberPwd"  required>
 						<span class="focus-input100"></span>
 					</div>
 

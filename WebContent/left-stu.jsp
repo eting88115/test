@@ -1,7 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=BIG5"
-    pageEncoding="BIG5" import="java.sql.*"%>
-<!DOCTYPE html>
-<html lang="tc">
+<%@page contentType="text/html; charset=BIG5"%>
+<%@page pageEncoding="BIG5"%>
+<%@page import="java.sql.*"%>
+<jsp:useBean id='objDBConfig' scope='session' class='test2.DBConfig' />
+
+<html >
 <head>
 <meta charset="BIG5">
 <title>left-stu</title>
@@ -19,29 +21,42 @@
      <i class="fa fa-remove"></i>
   </a>
 <head>
-<meta charset="utf-8">
+<meta charset="BIG5">
 <title>JSP Page</title>
 </head>
 <body>
-<%
- String name = request.getParameter("account");
- 
-%>
-Hi,<%=name %>您好：<br>
-姓名：<%=name %><br>
 
-</body>
 
    
-     <form action="">
+    
         <div class="activity-time">
           <ul>
+            
+  <%
+if(session.getAttribute("accessID") == null){
+	out.println("null");
+}
+else{ 
+	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+	Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
+	Statement smt= con.createStatement();
+	String getStuMemberData = "SELECT stuName FROM stuData WHERE stuID='"+session.getAttribute("accessID")+"'";
+	ResultSet stuMembers = smt.executeQuery(getStuMemberData);
+	if(stuMembers.next()){%>
+		<font color="blue"><%=stuMembers.getString("stuName")%>您好!</font>
+	<%}%>
+<%} %>
+            
+            
+            
+            
             <li>送出宿舍申請</li>(4/18~4/25)<br>
             <li>查看申請結果 </li>(4/28)<br>
             <li>床位抽籤</li>(5/1)<br>
             <li>選床位</li>(5/3~5/11)<br>
             <li>候補申請</li>(5/13~5/18)<br>
           </ul>
+        <form action="">
           <div class="login-button">
             <input type="submit" id="logout" value="登出"/>
             <input type="hidden" name="Logout" value="true"/><br></br>

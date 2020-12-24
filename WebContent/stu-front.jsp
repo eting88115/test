@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=BIG5"
-    pageEncoding="BIG5" import="java.sql.*"%>
+<%@ page language="java" pageEncoding="BIG5" import="java.sql.*"%>
 <!DOCTYPE html>
-<html lang="tc">
+<html>
 <head>
 <meta charset="BIG5">
 <title>stu-login_post</title>
