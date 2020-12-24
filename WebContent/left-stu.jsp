@@ -1,7 +1,7 @@
 <%@page contentType="text/html; charset=BIG5"%>
 <%@page pageEncoding="BIG5"%>
 <%@page import="java.sql.*"%>
-
+<jsp:useBean id='objDBConfig' scope='session' class='test2.DBConfig' />
 
 <html >
 <head>
@@ -46,17 +46,10 @@ else{
 		<font color="blue"><%=stuMembers.getString("stuName")%>您好!</font>
 	<%}%>
 <%} %>
-            
-            
-            
-            
-            <li>送出宿舍申請</li>(4/18~4/25)<br>
-            <li>查看申請結果 </li>(4/28)<br>
-            <li>床位抽籤</li>(5/1)<br>
-            <li>選床位</li>(5/3~5/11)<br>
-            <li>候補申請</li>(5/13~5/18)<br>
+          
           </ul>
-        <form action="">
+        <form action="identification.jsp">
+        
           <div class="login-button">
             <input type="submit" id="logout" value="登出"/>
             <input type="hidden" name="Logout" value="true"/><br></br>
