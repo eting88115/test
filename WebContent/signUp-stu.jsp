@@ -38,7 +38,7 @@
 					<span class="login100-form-title p-b-53">
 						學生註冊
 						<%if (request.getParameter("status")!="" && request.getParameter("status")!=null){
-							if(request.getParameter("status").equals("stuID")){ %>
+							if(request.getParameter("status").equals("memberID")){ %>
 							<p><font color="red">帳號已存在，請登入或重新註冊!</font></p>
 						<%}else{} }%>
     					<p>請填寫資料以建立帳號</p>
@@ -48,23 +48,23 @@
 						</span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate="請輸入帳號">
-						<input class="input100" type="text" name="stuID" required >
-						<span class="focus-input100"></span>
-					</div>
-					<div class="p-t-31 p-b-9">
-						<span class="txt1">信箱
-						</span>
-					</div>
-					<div class="wrap-input100 validate-input" data-validate="請輸入信箱">
-						<input class="input100" type="email" name="email" required >
+						<input class="input100" type="text" name="memberID" required >
 						<span class="focus-input100"></span>
 					</div>
 					<div class="p-t-31 p-b-9">
 						<span class="txt1">密碼
 						</span>
 					</div>
-					<div class="wrap-input100 validate-input" data-validate = "請輸入密碼">
-						<input class="input100" type="password" name="stuPwd"  required>
+					<div class="wrap-input100 validate-input" data-validate="請輸入密碼">
+						<input class="input100" type="password" name="memberPwd" required >
+						<span class="focus-input100"></span>
+					</div>
+					<div class="p-t-31 p-b-9">
+						<span class="txt1">信箱
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "請輸入信箱">
+						<input class="input100" type="email" name="email"  required>
 						<span class="focus-input100"></span>
 					</div>
 					<div class="container-login100-form-btn m-t-17">
