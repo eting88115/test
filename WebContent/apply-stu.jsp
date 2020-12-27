@@ -6,7 +6,7 @@
 <html lang="tc">
 <head>
 <meta charset="BIG5">
-<title>stu-register</title>
+<title>apply</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css\styles.css" >
 <link rel="stylesheet" href="css\styles2.css" >
@@ -41,17 +41,18 @@
     </div>
          <table>
               <tr><td><label for="stuID">學號:</label><input type="text" name="stuID" placeholder="請輸入學號" required></td>
-                  <td><label for="stuPW">密碼:</label><input type="text" name="stuPW" placeholder="請輸入密碼" required></td></tr><tr><td></td><td></td></tr>
-              <tr><td><label for="stuName">姓名:</label><input type="text" name="stuName" placeholder="請輸入姓名" required></td>
-                  <td><label for="subject">科系:</label><input type="text" name="subject" placeholder="請輸入科系" required></td></tr><tr><td></td><td></td></tr>
-              <tr><td><label for="class">班級:</label><input type="text" name="class" placeholder="請輸入班級" required></td>
-                  <td><label for="phone">電話:</label><input type="text" name="phone" placeholder="請輸入電話" required></td></tr><tr><td></td><td></td></tr>
-              <tr><td><label for="address">地址:</label><input type="text" name="address" placeholder="請輸入地址" required></td>
-                  <td><label for="email">信箱:</label><input type="text" name="email" placeholder="請輸入電子郵件" required></td></tr><tr><td></td><td></td></tr>
+                  <td><label for="stuPW">姓名:</label><input type="text" name="stuPW" placeholder="請輸入姓名" required></td></tr><tr><td></td><td></td></tr>
+              <tr><td><label for="stuName">科系:</label><input type="text" name="stuName" placeholder="請輸入科系" required></td>
+                  <td><label for="subject">班級:</label><input type="text" name="subject" placeholder="請輸入班級" required></td></tr><tr><td></td><td></td></tr>
+              <tr><td><label for="class">電話:</label><input type="text" name="class" placeholder="請輸入電話" required></td>
+                  <td><label for="phone">地址:</label><input type="text" name="phone" placeholder="請輸入地址" required></td></tr><tr><td></td><td></td></tr>
+              <tr><td><label for="address">信箱:</label><input type="text" name="address" placeholder="請輸入電子郵件" required></td>
+                  <td><label for="email">房號:</label><input type="text" name="email" placeholder="請輸入房號" required></td></tr><tr><td></td><td></td></tr>
+              <tr><td><label for="address">檔案:</label><input type="file" name="address" placeholder="請上傳檔案" required></td></tr><tr><td></td><td></td></tr>
          </table>
          <div class="login-button2">
-            <input type="submit" value="確認註冊">
-            <input type="reset" value="取消註冊">
+            <input type="submit" value="確認註冊" onclick="location.href='finishapply-stu.jsp'">
+            <input type="reset" value="取消註冊" onclick="location.href='stu-front.jsp'">
          </div>
   </form>
   </div>
