@@ -17,14 +17,14 @@
 	String address = new String(request.getParameter("address"));
 	String email = new String(request.getParameter("email"));
 	String roomNumber = new String(request.getParameter("roomNumber"));
-	String image = new String(request.getParameter("image"));
+	Object image = new String(request.getParameter("image"));
 	try 
 	{
 		smt.execute("INSERT INTO stuData (stuID, stuName, subject, stuclass, phone, address, email, roomNumber, image) VALUES('"+stuID+"','"+stuName+"','"+subject+"'+'"+stuclass+"','"+phone+"','"+address+"''"+email+"','"+roomNumber+"','"+image+"')");
 		con.close();
-		response.sendRedirect("login.jsp?status=newmember");
+		response.sendRedirect("finishapply-stu.jsp?status=newmember");
 	}catch (Exception e){
-		response.sendRedirect("signUp-stu.jsp?status=IDexist");
+		response.sendRedirect("apply-stu.jsp?status=IDexist");
 	}
 	%>
 </body>

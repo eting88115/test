@@ -3,7 +3,7 @@
 <%@page import="java.sql.*"%>
 <jsp:useBean id='objDBConfig' scope='session' class='test2.DBConfig' />
 <!DOCTYPE html>
-<html lang="tc">
+<html>
 <head>
 <meta charset="BIG5">
 <title>apply</title>
@@ -29,26 +29,23 @@
     <div class="form-fields d-grid"> 
     </div>
   </div>
-<form action="signUp_DB.jsp">
+<form action="apply-stu_DBSelect.jsp">
   <div class="w3-row" style="height:380px">
-  <form class="login100-form validate-form flex-sb flex-w" action="signUp_DBSelect.jsp">
+  <form class="login100-form validate-form flex-sb flex-w" action="apply-stu_DBSelect.jsp">
     <div class="post" style=" margin-left: 600px">
-      <h1 class="w3-text-teal"><b>註冊帳號</b></h1>
-      <%if (request.getParameter("status")!="" && request.getParameter("status")!=null){
-							if(request.getParameter("status").equals("IDexist")){ %>
-							<p><font color="red">帳號已存在，請登入或重新註冊!</font></p>
-						<%}else{} }%>
+      <h1 class="w3-text-teal"><b>宿舍申請表</b></h1>
+      
     </div>
          <table>
               <tr><td><label for="stuID">學號:</label><input type="text" name="stuID" placeholder="請輸入學號" required></td>
-                  <td><label for="stuPW">姓名:</label><input type="text" name="stuPW" placeholder="請輸入姓名" required></td></tr><tr><td></td><td></td></tr>
-              <tr><td><label for="stuName">科系:</label><input type="text" name="stuName" placeholder="請輸入科系" required></td>
-                  <td><label for="subject">班級:</label><input type="text" name="subject" placeholder="請輸入班級" required></td></tr><tr><td></td><td></td></tr>
-              <tr><td><label for="class">電話:</label><input type="text" name="class" placeholder="請輸入電話" required></td>
-                  <td><label for="phone">地址:</label><input type="text" name="phone" placeholder="請輸入地址" required></td></tr><tr><td></td><td></td></tr>
-              <tr><td><label for="address">信箱:</label><input type="text" name="address" placeholder="請輸入電子郵件" required></td>
-                  <td><label for="email">房號:</label><input type="text" name="email" placeholder="請輸入房號" required></td></tr><tr><td></td><td></td></tr>
-              <tr><td><label for="address">檔案:</label><input type="file" name="address" placeholder="請上傳檔案" required></td></tr><tr><td></td><td></td></tr>
+                  <td><label for="stuName">姓名:</label><input type="text" name="stuName" placeholder="請輸入姓名" required></td></tr><tr><td></td><td></td></tr>
+              <tr><td><label for="subject">科系:</label><input type="text" name="subject" placeholder="請輸入科系" required></td>
+                  <td><label for="stuclass">班級:</label><input type="text" name="stuclass" placeholder="請輸入班級" required></td></tr><tr><td></td><td></td></tr>
+              <tr><td><label for="phone">電話:</label><input type="text" name="phone" placeholder="請輸入電話" required></td>
+                  <td><label for="address">地址:</label><input type="text" name="address" placeholder="請輸入地址" required></td></tr><tr><td></td><td></td></tr>
+              <tr><td><label for="email">信箱:</label><input type="text" name="email" placeholder="請輸入電子郵件" required></td>
+                  <td><label for="roomNumber">房號:</label><input type="text" name="roomNumber" placeholder="請輸入房號" required></td></tr><tr><td></td><td></td></tr>
+              <tr><td><label for="image">檔案:</label><input type="file" name="image" placeholder="請上傳檔案" required></td></tr><tr><td></td><td></td></tr>
          </table>
          <div class="login-button2">
             <input type="submit" value="確認註冊" onclick="location.href='finishapply-stu.jsp'">
