@@ -18,7 +18,7 @@
 <body>
 
 <!-- Header --->
-<%@ include file="menu-stu.jsp" %>
+<%@ include file="menu-boss.jsp" %>
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
@@ -33,7 +33,7 @@
 
   <div class="w3-row" style="height:380px">
     <div class="post" style="margin-left: 600px">
-      <h1 class="w3-text-teal"><b>管理活動時間</b></h1>
+      <h1 class="w3-text-teal"><b>流程時間排定</b></h1>
     </div>
   <div style="margin-left: 550px">
   <div style="margin-top: 25px">

@@ -17,7 +17,7 @@
 
 
 <!-- Header --->
-<%@ include file="menu-stu.jsp" %>
+<%@ include file="menu-boss.jsp" %>
 <!-- Sidebar -->
 
  

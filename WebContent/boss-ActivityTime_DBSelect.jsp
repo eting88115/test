@@ -18,7 +18,7 @@
 	{
 		smt.execute("INSERT INTO ActivityTime (activity1, activity2, activity3, activity4, activity5) VALUES('"+activity1+"','"+activity2+"','"+activity3+"'+'"+activity4+"','"+activity5+"')");
 		con.close();
-		response.sendRedirect("tr-front.jsp?status=newmember");
+		response.sendRedirect("boss-front.jsp?status=newmember");
 	}catch (Exception e){
 		response.sendRedirect("boss-ActivityTime.jsp?status=IDexist");
 	}

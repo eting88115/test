@@ -4,7 +4,7 @@
 <html lang="tc">
 <head>
 <meta charset="BIG5">
-<title>qa-stu</title>
+<title>qa-boss</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css\styles.css" >
 <link rel="stylesheet" href="css\styles2.css" >
@@ -15,7 +15,7 @@
 <body>
 
 <!-- Header --->
-<%@ include file="menu-stu.jsp" %>
+<%@ include file="menu-boss.jsp" %>
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
