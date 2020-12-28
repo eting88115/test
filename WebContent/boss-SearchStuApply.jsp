@@ -34,12 +34,12 @@
     </div>
   </div>
 
-  <div class="w3-row" style="height:360px">
-    <div class="post" style=" margin-left: 650px">
+  <div class="w3-row" style="height:400px">
+    <div class="post" style=" margin-left: 550px">
     <h1 class="w3-text-teal"><b>申請單查詢主畫面</b></h1>
 	</div>
 	
-	<div class="search-studentName" style="margin-left: 620px;margin-top: 50px">
+	<div class="search-studentName" style="margin-left: 515px;margin-top: 50px">
 	<form action="boss-StuApply2.jsp" method="post">
 	<%
 	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
@@ -61,5 +61,5 @@
 	
 	</div>
 <!-- Footer -->
-<%@ include file="pageend.jsp" %>
+<%@ include file="pageend2.jsp" %>
 </html>

@@ -26,7 +26,7 @@
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
-<div class="w3-main" style="margin-left:100px; height: 900px">
+<div class="w3-main" style="margin-left:0px; height: 900px">
 
   <div class="w3-row w3-padding-64">
     <div class="form-fields d-grid"> 
@@ -71,12 +71,12 @@
 		num = Integer.parseInt(input);
 	rs.absolute(num);  //將指標移動到第num筆資料元素
 	%>
-    <div class="post" align="center" style="margin-left:150px">
+    <div class="post" align="center" style="margin-left:50px">
       <h1 class="w3-text-teal"><b>宿舍申請表</b></h1>
     </div>
     <div class="apply">
          
-         <table border="1" style="margin-left:70px; width: 700px;height: 20px">
+         <table border="1" style="margin-left:550px; width: 800px;height: 20px">
          <font color="#009393" size="5" style="margin-left:550px"><%=rs.getString("stuID") %><%=rs.getString("stuName") %>_申請單</font>
          </table>
 	 <div class="ApplyDetail">
@@ -98,15 +98,13 @@
            <input type = "button" value = "回申請單查詢主畫面" onclick = "window.location.href = 'boss-searchApply.jsp'">
            </div>
            <hr>
-           <div class="page" style="margin-left:10px; margin-top:40px">
+           <div class="page" style="margin-left:0px; margin-top:40px;width:1000px">
 	       <form action="boss-StuApply2.jsp" method="get">
 	          <table>
 	             <tr><td><a href="boss-StuApply2.jsp?view=1">第一筆</a></td>
 	                 <td><a href="boss-StuApply2.jsp?view=2">上一筆</a></td>
 	                 <td><a href="boss-StuApply2.jsp?view=3">下一筆</a></td>
-	                 <td><a href="boss-StuApply2.jsp?view=4">最後一筆</a></td>
-	                 <td> 輸入學號：<input type="text" size="3" name="input">
-	             <input type="submit" value="顯示成績"></td></tr>
+	                 <td><a href="boss-StuApply2.jsp?view=4">最後一筆</a></td></tr>
 	          </table>
            </form>
            </div>
@@ -114,5 +112,5 @@
          
 </div>
 <!-- Footer -->
-<%@ include file="pageend.jsp" %>
+<%@ include file="pageend2.jsp" %>
 </html>
