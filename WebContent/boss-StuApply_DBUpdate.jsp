@@ -12,9 +12,11 @@
 	String ApprovalStatus = new String(request.getParameter("ApprovalStatus"));
 	try 
 	{
-		smt.execute("INSERT INTO stuID (ApprovalStatus) VALUES('"+ApprovalStatus+"')");
+		smt.execute("update studentApply set ApprovalStatus='"+ApprovalStatus+"' where stuID='"+request.getParameter("studID") +"'");
 		con.close();
 		response.sendRedirect("boss-StuApply2.jsp?status=newApprovalStatus");
+	}catch (Exception e){
+		
 	}
 	%>
 </body>

@@ -90,7 +90,7 @@
                 <tr><td><label for="department">¬ì¨t:<%=rs.getString("department") %></label></td>
                     <td><label for="email">«H½c:<%=rs.getString("email") %></label></td></tr><tr><td></td><td></td></tr>
                 <tr><td><label for="classroom">¯Z¯Å:<%=rs.getString("class") %></label></td>
-                    <td><label for="Status">¼f®Öª¬ºA:</label><%=rs.getString("class") %></td></tr><tr><td></td><td></td></tr>
+                    <td><label for="Status">¼f®Öª¬ºA:</label><%=rs.getString("ApprovalStatus") %></td></tr><tr><td></td><td></td></tr>
               </table> 
      </div>
            <br>
