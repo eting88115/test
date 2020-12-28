@@ -43,7 +43,7 @@
           <div class="activity-time" style="font-size:14px;">
           <ul>
             <li>送出宿舍申請</li><%=rs.getString("activity1_start") %>~<%=rs.getString("activity1_end") %><br>
-            <li>查看申請結果</li><%=rs.getString("activity2") %><br>
+            <li>查看通過名單</li><%=rs.getString("activity2") %><br>
             <li>床位抽籤</li><%=rs.getString("activity3") %><br>
             <li>選床位</li><%=rs.getString("activity4_start") %>~<%=rs.getString("activity4_end") %><br>
             <li>候補申請</li><%=rs.getString("activity5_start") %>~<%=rs.getString("activity5_end") %><br>

@@ -50,7 +50,7 @@
     <input type="date" id="activity1_end" name="activity1_end" min="2020.12.28" value="<%=rs.getString("activity1_end") %>" required />
   </div>
   <div style="margin-top: 20px">
-    <label for="activity2">查看申請結果:</label>
+    <label for="activity2">查看通過名單:</label>
     <input type="date" id="activity2" name="activity2" min="2020.12.28" value="<%=rs.getString("activity2") %>" required />
   </div>
   <div style="margin-top: 20px">
