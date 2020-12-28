@@ -40,10 +40,10 @@
 <form action="boss-ActivityTime_DBUpdate.jsp" method="post">
 
   <div class="w3-row" style="height:400px">
-    <div class="post" style="margin-left: 650px">
+    <div class="post" style="margin-left: 580px">
       <h1 class="w3-text-teal"><b>流程時間排定</b></h1>
     </div>
-  <div style="margin-left: 550px">
+  <div style="margin-left: 440px">
   <div style="margin-top: 20px">
     <label for="activity1">送出宿舍申請:</label>
     <input type="date" id="activity1_start" name="activity1_start" min="2020.12.28" value="<%=rs.getString("activity1_start") %>" required />~
@@ -71,8 +71,8 @@
     <label for="activity5">候補結果:</label>
     <input type="date" id="activity6" name="activity6" min="2020.12.28" value="<%=rs.getString("activity6") %>" required />
   </div>
-  <div style="margin-top: 20px; margin-left: 170px">
-    <input type="submit" value="儲存">
+  <div style="margin-top: 20px; margin-left: 190px">
+    <input type="submit"  style="width: 80px "value="儲存">
   </div>
   </div>  
   </div>
@@ -81,5 +81,5 @@
   
 
 <!-- Footer -->
-<%@ include file="pageend.jsp" %>
+<%@ include file="pageend2.jsp" %>
 </html>

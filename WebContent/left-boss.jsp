@@ -36,6 +36,7 @@
 <div class="activity-time">
           <ul>
           <font color="blue">後臺管理者 您好!</font>
+          <p color="black">以下為本學期排程時間</p>
           </ul>
         
           <form action="">

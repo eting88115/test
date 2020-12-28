@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="BIG5">
-<title>stu-login_post</title>
+<title>stu-front</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css\styles.css" >
 <link rel="stylesheet" href="css\styles2.css" >
