@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="BIG5">
-<title>ActivityTime</title>
+<title>ActivityTimeEdite</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css\styles.css" >
 <link rel="stylesheet" href="css\styles2.css" >
@@ -29,7 +29,15 @@
     <div class="form-fields d-grid"> 
     </div>
   </div>
-<form action="boss-ActivityTime_DBSelect.jsp">
+  <%
+	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+	Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
+	Statement smt= con.createStatement();
+	String sql = "SELECT activity1, activity2, activity3, activity4, activity5 FROM ActivityTime ";
+	ResultSet rs = smt.executeQuery(sql);
+	rs.next();
+	%>
+<form action="boss-ActivityTime_DBUpdate.jsp" method="post">
 
   <div class="w3-row" style="height:380px">
     <div class="post" style="margin-left: 600px">
@@ -38,26 +46,26 @@
   <div style="margin-left: 550px">
   <div style="margin-top: 25px">
     <label for="activity1">寄出送出申請:</label>
-    <input type="date" id="activity1" name="activity1" min="2020.12.28" required>
+    <input type="date" id="activity1" name="activity1" min="2020.12.28" value="<%=rs.getString("activity1") %>" required />
   </div>
   <div style="margin-top: 25px">
     <label for="activity2">寄出公告申請結果設定床位開放:</label>
-    <input type="date" id="activity2" name="activity2" min="2020.12.28" required>
+    <input type="date" id="activity2" name="activity2" min="2020.12.28" value="<%=rs.getString("activity2") %>" required />
   </div>
   <div style="margin-top: 25px">
     <label for="activity3">學生選床位:</label>
-    <input type="date" id="activity3" name="activity3" min="2020.12.28" required>
+    <input type="date" id="activity3" name="activity3" min="2020.12.28" value="<%=rs.getString("activity3") %>" required />
   </div>
   <div style="margin-top: 25px">
     <label for="activity4">開放候補申請:</label>
-    <input type="date" id="activity4" name="activity4" min="2020.12.28" required>
+    <input type="date" id="activity4" name="activity4" min="2020.12.28" value="<%=rs.getString("activity4") %>" required />
   </div>
   <div style="margin-top: 25px">
     <label for="activity5">寄出候補結果:</label>
-    <input type="date" id="activity5" name="activity5" min="2020.12.28" required>
+    <input type="date" id="activity5" name="activity5" min="2020.12.28" value="<%=rs.getString("activity5") %>" required />
   </div>
   <div style="margin-top: 25px; margin-left: 100px">
-    <input type="submit">
+    <input type="submit" value="儲存">
   </div>
   </div>  
   </div>
