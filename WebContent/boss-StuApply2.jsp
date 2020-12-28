@@ -95,7 +95,7 @@
      </div>
            <br>
            <div class="button3">
-           <input type = "button" value = "回申請單查詢主畫面" onclick = "window.location.href = 'boss-searchApply.jsp'">
+           <input type = "button" value = "回申請單查詢主畫面" onclick = "window.location.href = 'boss-SearchStuApply.jsp'">
            </div>
            <hr>
            <div class="page" style="margin-left:0px; margin-top:40px;width:1000px">
