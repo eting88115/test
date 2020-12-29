@@ -9,23 +9,16 @@
 	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 	Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
 	Statement smt= con.createStatement();
-	String stuID = new String(request.getParameter("stuID"));
-	String stuName = new String(request.getParameter("stuName"));
-	String subject = new String(request.getParameter("subject"));
-	String stuclass = new String(request.getParameter("stuclass"));
-	String phone = new String(request.getParameter("phone"));
-	String address = new String(request.getParameter("address"));
-	String email = new String(request.getParameter("email"));
-	String roomNumber = new String(request.getParameter("roomNumber"));
-	Object image = new String(request.getParameter("image"));
-	try 
-	{
-		smt.execute("INSERT INTO stuData (stuID, stuName, subject, stuclass, phone, address, email, roomNumber, image) VALUES('"+stuID+"','"+stuName+"','"+subject+"'+'"+stuclass+"','"+phone+"','"+address+"''"+email+"','"+roomNumber+"','"+image+"')");
-		con.close();
-		response.sendRedirect("finishapply-stu.jsp?status=newmember");
-	}catch (Exception e){
-		response.sendRedirect("apply-stu.jsp?status=IDexist");
-	}
+	String stuI = new String(request.getParameter("stuID"));
+	String stuNam = new String(request.getParameter("stuName"));
+	String subjec = new String(request.getParameter("subject"));
+	String stuclas = new String(request.getParameter("stuclass"));
+	String phon = new String(request.getParameter("phone"));
+	String addres = new String(request.getParameter("address"));
+	String emai = new String(request.getParameter("email"));
+	String roomNumbe = new String(request.getParameter("roomNumber"));
+	smt.executeUpdate("UPDATE stuData SET stuID ='" + stuI+"', stuName ='" + stuNam+"', subject ='" + subjec +"', stuclass ='" + stuclas +"', phone ='" + phon+"', address ='" + addres+"', email ='" + emai+"', roomNumber ='" + roomNumbe+"' WHERE stuID ='" + request.getParameter("stuID")+"' ");
+	response.sendRedirect("finishapply-stu.jsp?stuID="+request.getParameter("stuID")+"");
 	%>
 </body>
 </html>
