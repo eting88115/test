@@ -29,7 +29,6 @@
     <div class="form-fields d-grid"> 
     </div>
   </div>
-<form action="apply-stu_DBSelect.jsp">
   <div class="w3-row" style="height:380px">
   <form class="login100-form validate-form flex-sb flex-w" action="apply-stu_DBSelect.jsp">
     <div class="post" style=" margin-left: 600px">
@@ -53,7 +52,6 @@
          </div>
   </form>
   </div>
-  </form>
   </div>
 <!-- Footer -->
 <%@ include file="pageend.jsp" %>

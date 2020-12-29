@@ -71,18 +71,18 @@
 		num = Integer.parseInt(input);
 	rs.absolute(num);  //將指標移動到第num筆資料元素
 	%>
-    <div class="post" align="center" style="margin-left:50px">
-      <h1 class="w3-text-teal"><b>宿舍申請表</b></h1>
+    <div class="post" align="center" style="margin-left:30px">
+      <h1 class="w3-text-teal"><b>審核名單-宿舍申請表</b></h1>
     </div>
     <div class="apply">
-         
+         <form action="boss-StuApply_DBUpdate.jsp">
          <table border="1" style="margin-left:550px; width: 800px;height: 20px">
          <font color="#009393" size="5" style="margin-left:550px"><%=rs.getString("stuID") %><%=rs.getString("stuName") %>_申請單</font>
          </table>
 	 <div class="ApplyDetail">
               <table border="1" style="margin-left:50px; width: 700px;height: 300px">
                 <tr><td><label for="name">姓名:<%=rs.getString("stuName") %></label></td>
-                    <td><label for="address">住址:<%=rs.getString("address") %></label></td></tr><tr><td></td><td></td></tr>
+                    <td><label for="address">住址:<br><%=rs.getString("address") %></label></td></tr><tr><td></td><td></td></tr>
                 <tr><td><label for="account">學號:<%=rs.getString("stuID") %></label></td>
                     <td><label for="phone">電話:<%=rs.getString("phone") %></label></td></tr><tr><td></td><td></td></tr>
                 <tr><td><label for="sex">性別:<%=rs.getString("sex") %></label></td>
@@ -90,15 +90,22 @@
                 <tr><td><label for="department">科系:<%=rs.getString("department") %></label></td>
                     <td><label for="email">信箱:<%=rs.getString("email") %></label></td></tr><tr><td></td><td></td></tr>
                 <tr><td><label for="classroom">班級:<%=rs.getString("class") %></label></td>
-                    <td><label for="Status">審核狀態:</label><%=rs.getString("ApprovalStatus") %></td></tr><tr><td></td><td></td></tr>
+                    <td><label for="Status">審核狀態:</label>
+                        <select name="ApprovalStatus" multiple size="3" required>
+                            <option value="0">待審核</option>
+                            <option value="1">通過</option>
+                            <option value="2">未通過</option>
+                        </select> 
+                    </td></tr><tr><td></td><td></td></tr>
               </table> 
      </div>
            <br>
-           <div class="button3">
-           <input type = "button" value = "回申請單查詢主畫面" onclick = "window.location.href = 'boss-SearchStuApply.jsp'">
+           <div class="button3"style="margin-left:-70px">
+           <input type="submit" style="width: 250px "value="儲存">
            </div>
+           <br>
            <hr>
-           <div class="page" style="margin-left:0px; margin-top:40px;width:1000px">
+           <div class="page" style="margin-left:0px; margin-top:20px;width:1000px">
 	       <form action="boss-StuApply2.jsp" method="get">
 	          <table>
 	             <tr><td><a href="boss-StuApply2.jsp?view=1">第一筆</a></td>
@@ -108,6 +115,7 @@
 	          </table>
            </form>
            </div>
+       </form>
     </div>
          
 </div>
