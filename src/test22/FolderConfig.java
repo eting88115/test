@@ -6,9 +6,9 @@ public class FolderConfig {
 	
 	public String FilePath(){
 	   //li's 
-		String DBPath="C:\\Users\\elene\\Desktop\\leelab\\WebContent\\assets\\images\\member\\";
+		//String DBPath="C:\\Users\\elene\\Desktop\\leelab\\WebContent\\assets\\images\\member\\";
 	   //Liao's 
-		 //String DBPath="C:\\Users\\Ting\\Desktop\\test\\WebContent\\assets\\images\\member\\";
+		 String DBPath="C:\\Users\\Ting\\Desktop\\test\\WebContent\\assets\\images\\member\\";
 	   return DBPath;		
 	}
 	public String WebsiteRelativeFilePath(){
