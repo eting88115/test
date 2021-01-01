@@ -22,7 +22,27 @@
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
      <i class="fa fa-remove"></i>
   </a>
-     
+   <%
+	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+	Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
+	Statement smt4= con.createStatement();
+	String sql4 = "SELECT activity1_start, activity1_end, activity2, activity3, activity4_start, activity4_end, activity5_start, activity5_end, activity6 FROM ActivityTime ";
+	ResultSet rs4 = smt4.executeQuery(sql4);
+	%>
+	<%while(rs4.next()){%>  
+     <li>送出宿舍申請:<br>
+     <%=rs4.getString("activity1_start") %>~<%=rs4.getString("activity1_end") %></li>
+     <li>查看通過名單:<br>
+     <%=rs4.getString("activity2") %></li>
+     <li>床位抽籤:<br>
+     <%=rs4.getString("activity3") %></li>
+     <li>選床位:<br>
+     <%=rs4.getString("activity4_start") %>~<%=rs4.getString("activity4_end") %></li>
+     <li>候補申請:<br>
+     <%=rs4.getString("activity5_start") %>~<%=rs4.getString("activity5_end") %></li>
+     <li>候補結果:<br>
+     <%=rs4.getString("activity6") %></li>
+    <%} %> 
  </nav>
  
 <!-- Header -->
@@ -57,7 +77,6 @@
 	// Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
 	// Connection con =DriverManager.getConnection("jdbc:odbc:dataBase") ;
 	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-	Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
 	Statement smt= con.createStatement
 			(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 	String sql = "SELECT * FROM announcement ORDER BY announcementTime DESC";
