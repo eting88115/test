@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="BIG5">
-<title>boss-room2</title>
+<title>room3</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css\styles.css" >
 <link rel="stylesheet" href="css\styles2.css" >
@@ -16,20 +16,20 @@
 <body>
 
 <!-- Header --->
-<%@ include file="menu-boss.jsp" %>
+<%@ include file="menu-stu.jsp" %>
 <!-- Sidebar -->
  <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
      <i class="fa fa-remove"></i>
   </a>
   	<div style="margin-top: 20px">
-    <a class="Step" onclick="location.href='boss-room1.jsp'">第一階段</a>
+    <a class="Step" onclick="location.href='stu-room1.jsp'">第一階段</a>
     </div>
     <div style="margin-top: 20px">
-	<a class="Step" onclick="location.href='boss-room2.jsp'">第二階段</a>
+	<a class="Step" onclick="location.href='stu-room2.jsp'">第二階段</a>
 	</div>
 	<div style="margin-top: 20px">
-	<a class="Step" onclick="location.href='boss-room3.jsp'">床位狀況</a>
+	<a class="Step" onclick="location.href='stu-room3.jsp'">床位狀況</a>
 	</div>
 	
  </nav>

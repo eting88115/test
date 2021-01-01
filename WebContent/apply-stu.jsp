@@ -55,7 +55,7 @@
                   <td><label for="roomNumber">房號:</label><input type="text" name="roomNumber" placeholder="請輸入房號" value="<%=rs.getString("roomNumber") %>"></td></tr><tr><td></td><td></td></tr>
               <tr><td><div >
             				<img src="<%=rs.getString("image") %>" alt="">
-            				<h3>選擇要上傳的文件:</h3>
+            				<h3>選擇要戶籍的文件:</h3>
             				<input type="file" name="theFirstFile" size="50" />
             				<input type="button" onClick="javascript:image();" name=submitButton value="上傳" />
 							<script language="javascript">  

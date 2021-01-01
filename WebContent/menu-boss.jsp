@@ -19,7 +19,7 @@
     <a href="boss-ActivityTimeEdite.jsp" class="w3-bar-item w3-button w3-hide-small w3-hover-white">流程時間排定</a>
     <a href="boss-SearchStuApply.jsp" class="w3-bar-item w3-button w3-hide-small w3-hover-white">審核名單</a>
     <a href="boss-passApply.jsp" class="w3-bar-item w3-button w3-hide-small w3-hover-white">通過名單</a>
-    <a href="boss-room1.jsp" class="w3-bar-item w3-button w3-hide-small w3-hover-white">宿舍床位狀況</a>
+    <a href="" class="w3-bar-item w3-button w3-hide-small w3-hover-white">宿舍床位狀況</a>
     <a href="https://student.ntunhs.edu.tw/files/11-1002-1545.php?Lang=zh-tw" class="w3-bar-item w3-button w3-hide-small w3-hover-white">校網-宿舍專區</a>
     <a href="qa-boss.jsp" class="w3-bar-item w3-button w3-hide-small w3-hover-white">常見問題QA</a>
     <a href="boss-front.jsp"><img src="images/LOGO.png" width="200" height="42" style="margin-left:280px"></a>
