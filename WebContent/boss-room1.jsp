@@ -56,20 +56,103 @@
   <div class="w3-row" style="height:450px">
   <form class="login100-form validate-form flex-sb flex-w" action="apply-stu_DBSelect.jsp?stuID=<%=request.getParameter("stuID")%>">
     <div class="post" style=" margin-left: 600px">
-      <h1 class="w3-text-teal"><b>宿舍申請表</b></h1>
-	<% 
-	String sql = "SELECT roomID FROM room where floorID=1";
-	ResultSet rs = smt.executeQuery(sql);
-	rs.next();
-	%>
+      <h1 class="w3-text-teal"><b>第一階段</b></h1>
+	
     </div>
     	<table>
-    		<%while(rs.next()){%>
-              <tr><td>第1層
-              <%=rs.getString("roomID") %>
+    	<!-- 第一層開始 -->
+    		  <% 
+				String sql = "SELECT roomID FROM room where floorID=1";
+				ResultSet rs = smt.executeQuery(sql);
+				rs.next();
+				%>
+              <tr><td>
+              第一層
+              </td>
+              <td>
+              <select>
+              <%while(rs.next()){%>
+              <option value=<%=rs.getString("roomID") %>><%=rs.getString("roomID") %> </option>
+              <%} %>
+              </select>
+              
               </td>
               </tr>
+              <!-- 第一層結束 -->
+              <!-- 第二層開始 -->
+              <% 
+				String sq2 = "SELECT roomID FROM room where floorID=2";
+				ResultSet rs2 = smt.executeQuery(sq2);
+				rs.next();
+				%>
+              <tr><td>
+              第二層
+              </td>
+              <td>
+              <select>
+              <%while(rs2.next()){%>
+              <option value=<%=rs2.getString("roomID") %>><%=rs2.getString("roomID") %> </option>
               <%} %>
+              </select>
+              </td>
+              </tr>
+              <!-- 第二層結束 -->
+              <!-- 第三層開始 -->
+              <% 
+				String sq3 = "SELECT roomID FROM room where floorID=3";
+				ResultSet rs3 = smt.executeQuery(sq3);
+				rs.next();
+				%>
+              <tr><td>
+              第三層
+              </td>
+              <td>
+              <select>
+              <%while(rs3.next()){%>
+              <option value=<%=rs3.getString("roomID") %>><%=rs3.getString("roomID") %> </option>
+              <%} %>
+              </select>
+              </td>
+              </tr>
+              <!-- 第三層結束 -->
+              <!-- 第四層開始 -->
+              <% 
+				String sq4 = "SELECT roomID FROM room where floorID=4";
+				ResultSet rs4 = smt.executeQuery(sq4);
+				rs.next();
+				%>
+              <tr><td>
+              第四層
+              </td>
+              <td>
+              <select>
+              <%while(rs4.next()){%>
+              <option value=<%=rs4.getString("roomID") %>><%=rs4.getString("roomID") %> </option>
+              <%} %>
+              </select>
+              </td>
+              </tr>
+              <!-- 第四層結束 -->
+              <!-- 第五層開始 -->
+              <% 
+				String sq5 = "SELECT roomID FROM room where floorID=5";
+				ResultSet rs5 = smt.executeQuery(sq5);
+				rs.next();
+				%>
+              <tr><td>
+              第五層
+              </td>
+              <td>
+              <select>
+              <%while(rs5.next()){%>
+              <option value=<%=rs5.getString("roomID") %>><%=rs5.getString("roomID") %> </option>
+              <%} %>
+              </select>
+              </td>
+              </tr>
+              <!-- 第五層結束 -->
+              
+              
          </table>
          <div class="login-button2">
             <input type="submit" value="確認申請" onclick="location.href='finishapply-stu.jsp'">
@@ -78,7 +161,13 @@
   </form>
   </div>
   </div>
-
+<select name="cars" multiple size="5">
+  <option value="volvo">Volvo</option>
+  <option value="bmw">BMW</option>
+  <option value="saab">Saab</option>
+  <option value="benz">Benz</option>
+  <option value="audi">Audi</option>
+</select>
 <!-- Footer -->
 <%@ include file="pageend.jsp" %>
 </html>
