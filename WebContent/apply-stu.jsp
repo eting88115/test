@@ -41,7 +41,7 @@
   <div class="w3-row" style="height:450px">
   <form class="login100-form validate-form flex-sb flex-w" action="apply-stu_DBSelect.jsp?stuID=<%=request.getParameter("stuID")%>">
     <div class="post" style=" margin-left: 600px">
-      <h1 class="w3-text-teal"><b>宿舍申請表</b></h1>
+      <h1 class="w3-text-teal"><b>個人資料修改</b></h1>
 
     </div>
          <table>
@@ -52,7 +52,6 @@
               <tr><td><label for="phone">電話:</label><input type="text" name="phone" placeholder="請輸入電話" value="<%=rs.getString("phone") %>"></td>
                   <td><label for="address">地址:</label><input type="text" name="address" placeholder="請輸入地址" value="<%=rs.getString("address") %>"></td></tr><tr><td></td><td></td></tr>
               <tr><td><label for="email">信箱:</label><input type="text" name="email" placeholder="請輸入電子郵件" value="<%=rs.getString("email") %>"></td>
-                  <td><label for="roomNumber">房號:</label><input type="text" name="roomNumber" placeholder="請輸入房號" value="<%=rs.getString("roomNumber") %>"></td></tr><tr><td></td><td></td></tr>
               <tr><td><div >
             				<img src="<%=rs.getString("image") %>" alt="">
             				<h3>選擇要戶籍的文件:</h3>
