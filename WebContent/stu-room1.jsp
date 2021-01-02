@@ -17,6 +17,10 @@ table {
   width: 50%;
   border-collapse: collapse;
 }
+p {
+	width: 50%;
+  border-collapse: collapse;
+}
 </style>
 </head>
 <body>
@@ -60,9 +64,10 @@ table {
   </div>
 
   <div class="w3-row" style="height:600px">
-  <form class="login100-form validate-form flex-sb flex-w" action="apply-stu_DBSelect.jsp?stuID=<%=request.getParameter("stuID")%>">
-    <div class="post" style=" margin-left: 600px">
-      <h1 class="w3-text-teal"><b>第一階段</b></h1>
+    <div class="post" style=" margin-left: 550px">
+      <h1 class="w3-text-teal"><b>第一階段</b><br>
+      <p style="color:red;">每位學生只可選擇一個房號，選後一律不能更改<br>沒申請者一律由系統隨機分配，一間至多四名學生。<br></p>
+      </h1>
 	
     </div>
     	<table>
@@ -175,12 +180,21 @@ table {
               </select>
               <!-- 第六層結束 -->
               </td>
+              <tr>
+              <td>
+              </td>
+              </tr>
          </table>
+         <div class="post" style=" margin-left: 550px">
+      		學號:<input type="text" name="roomID" placeholder="請輸入學號" value="">
+      		</h1>
+	
+    	</div>
          <div class="login-button2">
-            <input type="submit" value="確認申請" onclick="location.href='finishapply-stu.jsp'">
+         	
+            <input type="submit" value="確認申請" onclick="location.href='stu-room1finish.jsp'">
             <input type="reset" value="取消申請" onclick="location.href='stu-front.jsp'">
          </div>
-  </form>
   </div>
   </div>
 <!-- Footer -->
