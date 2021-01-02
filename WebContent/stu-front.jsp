@@ -91,7 +91,6 @@ else{
   <div class="w3-row">
     <div class="post" align="center">
       <h1 class="w3-text-teal"><b>公告資訊</b></h1>
-      <a href="#" class="w3-text-cyan w3-hover-red">新增公告</a>
     </div>
     <hr>
         <div class="w3-twothird w3-container">
