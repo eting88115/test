@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="BIG5">
-<title>stu-room3</title>
+<title>room3</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css\styles.css" >
 <link rel="stylesheet" href="css\styles2.css" >
@@ -22,13 +22,10 @@
      <i class="fa fa-remove"></i>
   </a>
   	<div style="margin-top: 20px">
-    <a class="Step" onclick="location.href='stu-room1.jsp'">第一階段</a>
+    <a class="Step" onclick="location.href='boss-room.jsp'">女宿結果</a>
     </div>
     <div style="margin-top: 20px">
-	<a class="Step" onclick="location.href='stu-room2.jsp'">第二階段</a>
-	</div>
-	<div style="margin-top: 20px">
-	<a class="Step" onclick="location.href='stu-room3.jsp'">房位結果</a>
+	<a class="Step" onclick="location.href='boss-boyroom.jsp'">男宿結果</a>
 	</div>
 	
  </nav>
@@ -38,7 +35,11 @@
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+
 <%@ include file="room3girl.jsp" %>
+
+
 <!-- Footer -->
+
 <%@ include file="pageend.jsp" %>
 </html>

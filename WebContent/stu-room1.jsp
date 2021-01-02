@@ -39,7 +39,7 @@ p {
 	<a class="Step" onclick="location.href='stu-room2.jsp'">第二階段</a>
 	</div>
 	<div style="margin-top: 20px">
-	<a class="Step" onclick="location.href='stu-room3.jsp'">床位狀況</a>
+	<a class="Step" onclick="location.href='stu-room3.jsp'">房位結果</a>
 	</div>
 	
  </nav>
@@ -64,21 +64,22 @@ p {
 
   <div class="w3-row" style="height:600px; margin-left: 200px">
     <div class="post" style=" margin-left: 480px;margin-top:25px">
-      <h1 class="w3-text-teal"><b>第一階段</b><br></h1>
-      <div style=" margin-left: -200px;margin-top:25px">
+      <h1 class="w3-text-teal"><b>第一階段</b></h1>
+      <div style=" margin-left: -280px;margin-top:25px">
       <h2 class="note"style="font-weight: bold ;font-size: 20px ;"><b>注意事項</b><br></h2>
       <ol type="1" style="color:red">
-       <li>每位學生只可選擇一個房號，選後一律不能更改。
-       <li>沒申請者一律由系統隨機分配，一間至多四名學生。
+       <li>每位學生只可選擇一個房號，選後一律不能更改，選擇多個房號一律視同未申請成功。
+       <li>第一階段第二階段皆沒申請者一律由系統隨機分配，一間至多四名學生，房間額滿將不可點選。
+       <li>第一階段已申請者，可不參與第二階段。
        </ol>
       </div>
       
     </div>
-        <div  style="margin-left: -80px">
+        <div  style="margin-left: -120px;width: 130%">
     	<table>
     	<!-- 第一層開始 -->
     		  <% 
-				String sql = "SELECT roomID FROM room where floorID=1";
+				String sql = "SELECT roomID FROM room where floorID=1 and floorsex=0";
 				ResultSet rs = smt.executeQuery(sql);
 				rs.next();
 				%>
@@ -97,7 +98,7 @@ p {
               <td>
               <!-- 第二層開始 -->
               <% 
-				String sq2 = "SELECT roomID FROM room where floorID=2";
+				String sq2 = "SELECT roomID FROM room where floorID=2 and floorsex=0";
 				ResultSet rs2 = smt.executeQuery(sq2);
 				rs.next();
 				%>
@@ -114,7 +115,7 @@ p {
               <td>
               <!-- 第三層開始 -->
               <% 
-				String sq3 = "SELECT roomID FROM room where floorID=3";
+				String sq3 = "SELECT roomID FROM room where floorID=3 and floorsex=0";
 				ResultSet rs3 = smt.executeQuery(sq3);
 				rs.next();
 				%>
@@ -129,18 +130,15 @@ p {
               <!-- 第三層結束 -->
               </td>
               
-              </tr>
-			<tr>
-			<td>
-			</td>
-			</tr>
+              
               <!-- 第四層開始 -->
               <% 
-				String sq4 = "SELECT roomID FROM room where floorID=4";
+				String sq4 = "SELECT roomID FROM room where floorID=4 and floorsex=0";
 				ResultSet rs4 = smt.executeQuery(sq4);
 				rs.next();
 				%>
-              <tr><td>
+              </td>
+              <td>
               第四層樓
               </td>
               <td>
@@ -151,10 +149,18 @@ p {
               </select>
               <!-- 第四層結束 -->
               </td>
+              
+              </tr>
+			<tr>
+			<td>
+			</td>
+			</tr>
+              
+              
               <td>
               <!-- 第五層開始 -->
               <% 
-				String sq5 = "SELECT roomID FROM room where floorID=5";
+				String sq5 = "SELECT roomID FROM room where floorID=5 and floorsex=0";
 				ResultSet rs5 = smt.executeQuery(sq5);
 				rs.next();
 				%>
@@ -171,7 +177,7 @@ p {
               <td>
               <!-- 第六層開始 -->
               <% 
-				String sq6 = "SELECT roomID FROM room where floorID=6";
+				String sq6 = "SELECT roomID FROM room where floorID=6 and floorsex=0";
 				ResultSet rs6 = smt.executeQuery(sq6);
 				rs.next();
 				%>
@@ -185,15 +191,49 @@ p {
               </select>
               <!-- 第六層結束 -->
               </td>
+              <td>
+              <!-- 第七層開始 -->
+              <% 
+				String sq7 = "SELECT roomID FROM room where floorID=7 and floorsex=0";
+				ResultSet rs7 = smt.executeQuery(sq7);
+				rs.next();
+				%>
+				第七層樓
+              </td>
+              <td>
+              <select multiple size=5>
+              <%while(rs7.next()){%>
+              <option value=<%=rs7.getString("roomID") %>><%=rs7.getString("roomID") %> </option>
+              <%} %>
+              </select>
+              <!-- 第七層結束 -->
+              </td>
+              <td>
+              <!-- 第八層開始 -->
+              <% 
+				String sq8 = "SELECT roomID FROM room where floorID=8 and floorsex=0";
+				ResultSet rs8 = smt.executeQuery(sq8);
+				rs.next();
+				%>
+				第八層樓
+              </td>
+              <td>
+              <select multiple size=5>
+              <%while(rs8.next()){%>
+              <option value=<%=rs8.getString("roomID") %>><%=rs8.getString("roomID") %> </option>
+              <%} %>
+              </select>
+              <!-- 第八層結束 -->
+              </td>
               <tr>
               <td>
               </td>
               </tr>
          </table>
-         <div class="post" style="margin-left: 500px">
-      		學號:<input type="text" name="roomID" placeholder="請輸入學號" value="">
+         <div class="post" style="margin-left: 550px">
+      		學號:<input type="text" name="roomID" placeholder="請輸入學號" value="" required>
     	</div>
-         <div class="login-button2" style="margin-left: -50px" >
+         <div class="login-button2">
             <input type="submit" value="確認申請" onclick="location.href='stu-room1finish.jsp'">
             <input type="reset" value="取消申請" onclick="location.href='stu-front.jsp'">
          </div>
