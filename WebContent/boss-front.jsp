@@ -29,7 +29,14 @@
 	String sql4 = "SELECT activity1_start, activity1_end, activity2, activity3, activity4_start, activity4_end, activity5_start, activity5_end, activity6 FROM ActivityTime ";
 	ResultSet rs4 = smt4.executeQuery(sql4);
 	%>
-	<%while(rs4.next()){%>  
+	<div class="activity-time">
+          <ul>
+          <font color="blue">後臺管理者 您好!</font>
+          <p color="black">以下為本學期排程時間</p>
+          </ul>
+          <div class="activity-time" style="font-size:14px;">
+	<%while(rs4.next()){%>
+	<ul>  
      <li>送出宿舍申請:<br>
      <%=rs4.getString("activity1_start") %>~<%=rs4.getString("activity1_end") %></li>
      <li>查看通過名單:<br>
@@ -42,7 +49,10 @@
      <%=rs4.getString("activity5_start") %>~<%=rs4.getString("activity5_end") %></li>
      <li>候補結果:<br>
      <%=rs4.getString("activity6") %></li>
+     </ul>
     <%} %> 
+         </div>
+   </div>
  </nav>
  
 <!-- Header -->

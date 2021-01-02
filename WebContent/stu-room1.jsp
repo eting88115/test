@@ -54,7 +54,6 @@ p {
 	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 	Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
 	Statement smt= con.createStatement();
-
 	%>
 <div class="w3">
 
@@ -63,13 +62,19 @@ p {
     </div>
   </div>
 
-  <div class="w3-row" style="height:600px">
-    <div class="post" style=" margin-left: 550px">
-      <h1 class="w3-text-teal"><b>第一階段</b><br>
-      <p style="color:red;">每位學生只可選擇一個房號，選後一律不能更改<br>沒申請者一律由系統隨機分配，一間至多四名學生。<br></p>
-      </h1>
-	
+  <div class="w3-row" style="height:600px; margin-left: 200px">
+    <div class="post" style=" margin-left: 480px;margin-top:25px">
+      <h1 class="w3-text-teal"><b>第一階段</b><br></h1>
+      <div style=" margin-left: -200px;margin-top:25px">
+      <h2 class="note"style="font-weight: bold ;font-size: 20px ;"><b>注意事項</b><br></h2>
+      <ol type="1" style="color:red">
+       <li>每位學生只可選擇一個房號，選後一律不能更改。
+       <li>沒申請者一律由系統隨機分配，一間至多四名學生。
+       </ol>
+      </div>
+      
     </div>
+        <div  style="margin-left: -80px">
     	<table>
     	<!-- 第一層開始 -->
     		  <% 
@@ -78,7 +83,7 @@ p {
 				rs.next();
 				%>
               <tr><td>
-              第一層
+              第一層樓
               </td>
               <td>
               <select multiple size=5>
@@ -96,7 +101,7 @@ p {
 				ResultSet rs2 = smt.executeQuery(sq2);
 				rs.next();
 				%>
-				第二層
+				第二層樓
               </td>
               <td>
               <select multiple size=5>
@@ -113,7 +118,7 @@ p {
 				ResultSet rs3 = smt.executeQuery(sq3);
 				rs.next();
 				%>
-				第三層
+				第三層樓
               </td>
               <td>
               <select multiple size=5>
@@ -136,7 +141,7 @@ p {
 				rs.next();
 				%>
               <tr><td>
-              第四層
+              第四層樓
               </td>
               <td>
               <select multiple size=5>
@@ -153,7 +158,7 @@ p {
 				ResultSet rs5 = smt.executeQuery(sq5);
 				rs.next();
 				%>
-				第五層
+				第五層樓
               </td>
               <td>
               <select multiple size=5>
@@ -170,7 +175,7 @@ p {
 				ResultSet rs6 = smt.executeQuery(sq6);
 				rs.next();
 				%>
-				第六層
+				第六層樓
               </td>
               <td>
               <select multiple size=5>
@@ -185,13 +190,10 @@ p {
               </td>
               </tr>
          </table>
-         <div class="post" style=" margin-left: 550px">
+         <div class="post" style="margin-left: 500px">
       		學號:<input type="text" name="roomID" placeholder="請輸入學號" value="">
-      		</h1>
-	
     	</div>
-         <div class="login-button2">
-         	
+         <div class="login-button2" style="margin-left: -50px" >
             <input type="submit" value="確認申請" onclick="location.href='stu-room1finish.jsp'">
             <input type="reset" value="取消申請" onclick="location.href='stu-front.jsp'">
          </div>
