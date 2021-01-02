@@ -1,4 +1,6 @@
-<%@ page language="java" pageEncoding="BIG5" import="java.sql.*"%>
+<%@ page language="java" contentType="text/html; charset=BIG5" pageEncoding="BIG5"%>
+<%@page import="java.sql.*"%>
+<jsp:useBean id='objDBConfig' scope='session' class='test2.DBConfig' />
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +22,58 @@
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
      <i class="fa fa-remove"></i>
   </a>
-<%@ include file="left-stu.jsp" %>
+  <div class="activity-time">
+          <ul>
+         
+  <%
+if(session.getAttribute("accessID") == null){
+	out.println("null");
+}
+else{ 
+	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+	Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
+	Statement smt= con.createStatement();
+	String getStuMemberData = "SELECT stuName FROM stuData WHERE stuID='"+session.getAttribute("accessID")+"'";
+	ResultSet stuMembers = smt.executeQuery(getStuMemberData);
+	if(stuMembers.next()){%>
+		<font color="blue"><%=stuMembers.getString("stuName")%>您好!</font>
+	<%}%>
+<%} %>
+      <%
+    Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
+	Statement smt4= con.createStatement();
+	String sql4 = "SELECT activity1_start, activity1_end, activity2, activity3, activity4_start, activity4_end, activity5_start, activity5_end, activity6 FROM ActivityTime ";
+	ResultSet rs4 = smt4.executeQuery(sql4);
+	%>   
+          </ul>
+        <form action="identification.jsp">
+        <div class="activity-time" style="font-size:14px;">
+	<%while(rs4.next()){%>
+	<ul>  
+     <li>送出宿舍申請:<br>
+     <%=rs4.getString("activity1_start") %>~<%=rs4.getString("activity1_end") %></li>
+     <li>查看通過名單:<br>
+     <%=rs4.getString("activity2") %></li>
+     <li>床位抽籤:<br>
+     <%=rs4.getString("activity3") %></li>
+     <li>選床位:<br>
+     <%=rs4.getString("activity4_start") %>~<%=rs4.getString("activity4_end") %></li>
+     <li>候補申請:<br>
+     <%=rs4.getString("activity5_start") %>~<%=rs4.getString("activity5_end") %></li>
+     <li>候補結果:<br>
+     <%=rs4.getString("activity6") %></li>
+     </ul>
+    <%} %> 
+          <div class="login-button">
+            <input type="submit" id="logout" value="登出"/>
+            <input type="hidden" name="Logout" value="true"/><br></br>
+          </div>
+        </div>
+     </form>
+  
+  
+  
+
  </nav>
  
 <!-- Header -->
