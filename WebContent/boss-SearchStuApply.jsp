@@ -54,7 +54,7 @@
               <option value="<%=rs.getString("stuName")%>"><%=rs.getString("stuName") %></option>
           <%}con.close();%>   
  	</select>
-	<input type="submit" value="¬d¸ß¦¨ÁZ">
+	<input type="submit" value="¬d¸ß">
 	</form>
 	</div>
 	</div>
