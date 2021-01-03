@@ -3,16 +3,16 @@
 <%@page import="java.sql.*"%>
 <jsp:useBean id='objDBConfig' scope='session' class='test2.DBConfig' />
 <%
-if(request.getParameter("TrID") !=null &&
-	request.getParameter("TrPwd") !=null){
+if(request.getParameter("memberID") !=null &&
+	request.getParameter("memberPwd") !=null){
 	Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
 	Statement smt= con.createStatement();
-	String getpaperdata = "SELECT * FROM TrData WHERE TrID='"+
-			request.getParameter("TrID")+"' AND TrPwd='" +
-			request.getParameter("TrPwd")+"'";
+	String getpaperdata = "SELECT * FROM member WHERE memberID='"+
+			request.getParameter("memberID")+"' AND memberPwd='" +
+			request.getParameter("memberPwd")+"'";
 	ResultSet paperrs = smt.executeQuery(getpaperdata);
 	if(paperrs.next()){
-		session.setAttribute("accessID",request.getParameter("TrID"));
+		session.setAttribute("accessID",request.getParameter("memberID"));
 		//session.setMaxInactiveInterval(20); ¦Û°Êµn¥X
 		response.sendRedirect("Tr-front.jsp");
 	}else

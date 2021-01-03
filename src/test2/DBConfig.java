@@ -12,9 +12,9 @@ public class DBConfig {
 	   //Yujia's 
 		 //String DBPath="D:\\leelabnas\\Java\\course\\Access\\LeeLab.accdb";
 		//liao's
-		String DBPath="C:\\Users\\Ting\\Desktop\\test\\Database.accdb";
+		//String DBPath="C:\\Users\\Ting\\Desktop\\test\\Database.accdb";
 		//chieh's
-		//String DBPath="C:\\Users\\USER\\git\\test\\Database.accdb";
+		String DBPath="C:\\Users\\USER\\git\\test\\Database.accdb";
 		//Jing's
 		//String DBPath="C:\\Users\\elene\\Desktop\\test\\test\\test\\Database.accdb";
 		//yun's
