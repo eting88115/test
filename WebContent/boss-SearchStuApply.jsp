@@ -40,7 +40,7 @@
 	</div>
 	
 	<div class="search-studentName" style="margin-left: 515px;margin-top: 50px">
-	<form action="boss-StuApply2.jsp" method="post">
+	<form action="boss-StuApply.jsp" method="post">
 	<%
 	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 	Connection con = DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");

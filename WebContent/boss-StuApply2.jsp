@@ -37,7 +37,7 @@
 		Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
 	Statement smt= con.createStatement
 			(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-	String sql = "SELECT stuName, address, stuID, phone, sex, department, email, class, ApprovalStatus FROM studentApply ";
+	String sql = "SELECT stuName, address, stuID, phone, sex, department, email, class, statusID FROM studentApply ";
 	ResultSet rs = smt.executeQuery(sql);
 	rs.last(); //將指標移至最後一筆資料
 	int last = rs.getRow(); //取得總資料筆數
@@ -71,11 +71,26 @@
 		num = Integer.parseInt(input);
 	rs.absolute(num);  //將指標移動到第num筆資料元素
 	%>
+	<%
+	Statement smt2= con.createStatement();
+	String sql2 = "SELECT statusDes FROM approvalStatus where statusID=0";
+	ResultSet rs2 = smt2.executeQuery(sql2);
+	%>
+	<%
+	Statement smt3= con.createStatement();
+	String sql3 = "SELECT statusDes FROM approvalStatus where statusID=1";
+	ResultSet rs3 = smt3.executeQuery(sql3);
+	%>
+	<%
+	Statement smt4= con.createStatement();
+	String sql4 = "SELECT statusDes FROM approvalStatus where statusID=2";
+	ResultSet rs4 = smt4.executeQuery(sql4);
+	%>
     <div class="post" align="center" style="margin-left:30px">
       <h1 class="w3-text-teal"><b>審核名單-宿舍申請表</b></h1>
     </div>
     <div class="apply">
-    <form action="boss-stuApply2_DBUpdate.jsp?stuID="<%=rs.getString("stuID")%>" method="get">
+    <form action="boss-StuApply2_DBUpdate.jsp?stuID="<%=rs.getString("stuID")%>" method="get">
          <table border="1" style="margin-left:550px; width: 800px;height: 20px">
          <font color="#009393" size="5" style="margin-left:550px"><%=rs.getString("stuID") %><%=rs.getString("stuName") %>_申請單</font>
          </table>
@@ -90,20 +105,13 @@
                 <tr><td><label for="department">科系:<%=rs.getString("department") %></label></td>
                     <td><label for="email">信箱:<%=rs.getString("email") %></label></td></tr><tr><td></td><td></td></tr>
                 <tr><td><label for="classroom">班級:<%=rs.getString("class") %></label></td>
-                    <td><label for="Status">審核狀態:</label>
-                        <select name="ApprovalStatus" multiple size="3" required>
-                            <option value="0">待審核</option>
-                            <option value="1">通過</option>
-                            <option value="2">未通過</option>
-                        </select> 
-                    </td></tr><tr><td></td><td></td></tr>
+                <%while(rs2.next()){%><%while(rs3.next()){%><%while(rs4.next()){%>
+                    <td><label for="Status">審核狀態:<%=rs2.getString("statusDes")%><%=rs3.getString("statusDes")%><%=rs4.getString("statusDes")%></label></td></tr><tr><td></td><td></td></tr>
+                <%} %> <%} %> <%} %>
               </table> 
      </div>
            <br>
            
-           <div class="button3"style="margin-left:-70px">
-           
-           <input type="submit" style="width: 250px "value="儲存">
            </form>
            </div>
            <br>
