@@ -9,7 +9,7 @@
 	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 	Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
 	Statement smt= con.createStatement();
-	String memberClass = new String(request.getParameter("memberClass"));
+	String Class = new String(request.getParameter("Class"));
 	String memberName = new String(request.getParameter("memberName"));
 	String Point = new String(request.getParameter("Point"));
 	String reason = new String(request.getParameter("reason"));
@@ -19,7 +19,7 @@
 
 	try 
 	{
-		smt.execute("INSERT INTO point (memberClass, memberName, Point, reason, ID, BedNo) VALUES('"+memberClass+"','"+memberName+"','"+Point+"','"+reason+"','"+ID+"','"+BedNo+"')");
+		smt.execute("INSERT INTO point (Class, memberName, Point, reason, ID, BedNo) VALUES('"+Class+"','"+memberName+"','"+Point+"','"+reason+"','"+ID+"','"+BedNo+"')");
 		con.close();
 		response.sendRedirect("boss-point.jsp?status=newmember");
 	}catch (Exception e){
