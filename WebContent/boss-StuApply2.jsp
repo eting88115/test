@@ -75,7 +75,7 @@
       <h1 class="w3-text-teal"><b>審核名單-宿舍申請表</b></h1>
     </div>
     <div class="apply">
-         <form action="boss-StuApply_DBUpdate.jsp">
+    <form action="boss-stuApply2_DBUpdate.jsp?stuID="<%=rs.getString("stuID")%>" method="get">
          <table border="1" style="margin-left:550px; width: 800px;height: 20px">
          <font color="#009393" size="5" style="margin-left:550px"><%=rs.getString("stuID") %><%=rs.getString("stuName") %>_申請單</font>
          </table>
@@ -83,7 +83,7 @@
               <table border="1" style="margin-left:50px; width: 700px;height: 300px">
                 <tr><td><label for="name">姓名:<%=rs.getString("stuName") %></label></td>
                     <td><label for="address">住址:<br><%=rs.getString("address") %></label></td></tr><tr><td></td><td></td></tr>
-                <tr><td><label for="account">學號:<%=rs.getString("stuID") %></label></td>
+                <tr><td><label for="account">學號:<%=rs.getString("stuID") %></label></td>               
                     <td><label for="phone">電話:<%=rs.getString("phone") %></label></td></tr><tr><td></td><td></td></tr>
                 <tr><td><label for="sex">性別:<%=rs.getString("sex") %></label></td>
                     <td><label for="photo">戶籍資料圖片檔:<%=rs.getString("sex") %></label></td></tr><tr><td></td><td></td></tr>
@@ -100,8 +100,11 @@
               </table> 
      </div>
            <br>
+           
            <div class="button3"style="margin-left:-70px">
+           
            <input type="submit" style="width: 250px "value="儲存">
+           </form>
            </div>
            <br>
            <hr>
@@ -115,7 +118,7 @@
 	          </table>
            </form>
            </div>
-       </form>
+       
     </div>
          
 </div>
