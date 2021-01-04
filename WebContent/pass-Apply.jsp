@@ -28,7 +28,7 @@
 	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 	Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
 	Statement smt= con.createStatement();
-	String sql = "SELECT stuID, stuName, address, class FROM studentApply where ApprovalStatus=1";
+	String sql = "SELECT stuID, stuName, address, class FROM studentApply where statusID=1";
 	ResultSet rs = smt.executeQuery(sql);
 %>
       
