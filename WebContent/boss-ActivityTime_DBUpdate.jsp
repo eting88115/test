@@ -13,13 +13,12 @@
 	String activity1_start = new String(request.getParameter("activity1_start").getBytes("ISO-8859-1"));
 	String activity1_end = new String(request.getParameter("activity1_end").getBytes("ISO-8859-1"));
 	String activity2 = new String(request.getParameter("activity2").getBytes("ISO-8859-1"));
-	String activity3 = new String(request.getParameter("activity3").getBytes("ISO-8859-1"));
 	String activity4_start = new String(request.getParameter("activity4_start").getBytes("ISO-8859-1"));
 	String activity4_end = new String(request.getParameter("activity4_end").getBytes("ISO-8859-1"));
 	String activity5_start = new String(request.getParameter("activity5_start").getBytes("ISO-8859-1"));
 	String activity5_end = new String(request.getParameter("activity5_end").getBytes("ISO-8859-1"));
 	String activity6 = new String(request.getParameter("activity6").getBytes("ISO-8859-1"));
-	smt.executeUpdate("UPDATE ActivityTime SET activity1_start ='" + activity1_start+"',activity1_end ='" + activity1_end+"', activity2 ='" + activity2+"', activity3 ='" + activity3 +"', activity4_start ='" + activity4_start +"', activity4_end ='" + activity4_end +"', activity5_start ='" + activity5_start +"', activity5_end ='" + activity5_end +"', activity6 ='" + activity6 +"'");
+	smt.executeUpdate("UPDATE ActivityTime SET activity1_start ='" + activity1_start+"',activity1_end ='" + activity1_end+"', activity2 ='" + activity2+"', activity4_start ='" + activity4_start +"', activity4_end ='" + activity4_end +"', activity5_start ='" + activity5_start +"', activity5_end ='" + activity5_end +"', activity6 ='" + activity6 +"'");
 	response.sendRedirect("boss-front.jsp?status=newActivityTime");
 %>
 </body>

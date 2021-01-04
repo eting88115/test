@@ -54,21 +54,17 @@
     <input type="date" id="activity2" name="activity2" min="2020.12.28"  required />
   </div>
   <div style="margin-top: 20px">
-    <label for="activity3">床位抽籤:</label>
-    <input type="date" id="activity3" name="activity3" min="2020.12.28"  required />
-  </div>
-  <div style="margin-top: 20px">
-    <label for="activity4">選床位:</label>
+    <label for="activity4">第一階段床位申請:</label>
     <input type="date" id="activity4_start" name="activity4_start" min="2020.12.28" required />~
     <input type="date" id="activity4_end" name="activity4_end" min="2020.12.28"  required />
   </div>
   <div style="margin-top: 20px">
-    <label for="activity5">候補申請:</label>
+    <label for="activity5">第二階段床位申請:</label>
     <input type="date" id="activity5_start" name="activity5_start" min="2020.12.28" required />~
     <input type="date" id="activity5_end" name="activity5_end" min="2020.12.28" required />
   </div>
   <div style="margin-top: 20px">
-    <label for="activity5">候補結果:</label>
+    <label for="activity5">房位結果:</label>
     <input type="date" id="activity6" name="activity6" min="2020.12.28" value="<%=rs.getString("activity6") %>" required />
   </div>
   <div style="margin-top: 20px; margin-left: 190px">

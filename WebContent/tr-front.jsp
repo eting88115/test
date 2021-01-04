@@ -49,18 +49,16 @@ else{
         <form action="identification.jsp">
         <div class="activity-time" style="font-size:14px;">
 	<%while(rs4.next()){%>
-	<ul>  
+	<ul>
      <li>送出宿舍申請:<br>
      <%=rs4.getString("activity1_start") %>~<%=rs4.getString("activity1_end") %></li>
      <li>查看通過名單:<br>
      <%=rs4.getString("activity2") %></li>
-     <li>床位抽籤:<br>
-     <%=rs4.getString("activity3") %></li>
-     <li>選床位:<br>
+     <li>第一階段床位申請:<br>
      <%=rs4.getString("activity4_start") %>~<%=rs4.getString("activity4_end") %></li>
-     <li>候補申請:<br>
+     <li>第二階段床位申請:<br>
      <%=rs4.getString("activity5_start") %>~<%=rs4.getString("activity5_end") %></li>
-     <li>候補結果:<br>
+     <li>房位結果:<br>
      <%=rs4.getString("activity6") %></li>
      </ul>
     <%} %> 
