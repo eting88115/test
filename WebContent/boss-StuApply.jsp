@@ -58,12 +58,26 @@
                 <tr><td><label for="account">學號:<%=rs.getString("stuID") %></label></td>               
                     <td><label for="phone">電話:<%=rs.getString("phone") %></label></td></tr><tr><td></td><td></td></tr>
                 <tr><td><label for="sex">性別:<%=rs.getString("sex") %></label></td>
-                    <td><label for="photo">戶籍資料圖片檔:<%=rs.getString("sex") %></label></td></tr><tr><td></td><td></td></tr>
+                 
+                    <td><label for="photo">戶籍資料圖片檔:<img src="<%=rs.getString("pic") %>" alt=""></label></td></tr><tr><td></td><td></td></tr>
+                
+            <input type="button" onClick="javascript:pic();" name=submitButton value="瀏覽檔案" />
+			<script language="javascript">  
+			//點選提交按鈕觸發下面的函式
+			function pic(){  
+				document.form.action=" boss-stuApply_DBUpdate_pic.jsp";
+				document.form.enctype="multipart/form-data";
+				document.form.submit();
+			}  
+			</script>         
+			
+		
+		
                 <tr><td><label for="department">科系:<%=rs.getString("department") %></label></td>
                     <td><label for="email">信箱:<%=rs.getString("email") %></label></td></tr><tr><td></td><td></td></tr>
                 <tr><td><label for="classroom">班級:<%=rs.getString("class") %></label></td>
                     <td><label for="Status">審核狀態:</label>
-                        <select name="ApprovalStatus" multiple size="3" required>
+                        <select name="statusID" multiple size="3" required>
                             <option value="0">待審核</option>
                             <option value="1">通過</option>
                             <option value="2">未通過</option>

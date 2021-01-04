@@ -91,12 +91,12 @@
                 <tr><td><label for="account">學號:<%=rs.getString("stuID") %></label></td>               
                     <td><label for="phone">電話:<%=rs.getString("phone") %></label></td></tr><tr><td></td><td></td></tr>
                 <tr><td><label for="sex">性別:<%=rs.getString("sex") %></label></td>
-                    <td><label for="photo">戶籍資料圖片檔:<%=rs.getString("sex") %></label></td></tr><tr><td></td><td></td></tr>
+                    <td><label for="photo">戶籍資料圖片檔:<img src="<%=rs.getString("pic") %>" alt=""></label></td></tr><tr><td></td><td></td></tr>
                 <tr><td><label for="department">科系:<%=rs.getString("department") %></label></td>
                     <td><label for="email">信箱:<%=rs.getString("email") %></label></td></tr><tr><td></td><td></td></tr>
                 <tr><td><label for="classroom">班級:<%=rs.getString("class") %></label></td>
                 <%while(rs2.next()){%>
-                    <td><label for="Status">審核狀態:<%=rs2.getString("statusDes")%></label></td></tr><tr><td></td><td></td></tr>
+                    <td><label for="statusDes">審核狀態:<%=rs2.getString("statusDes")%></label></td></tr><tr><td></td><td></td></tr>
                 <%} %>
               </table> 
      </div>

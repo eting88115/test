@@ -9,10 +9,10 @@
 	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 	Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
 	Statement smt= con.createStatement();
-	String ApprovalStatus = new String(request.getParameter("ApprovalStatus"));
+	String statusID = new String(request.getParameter("statusID"));
 	try 
 	{
-		smt.execute("update studentApply set ApprovalStatus='"+ApprovalStatus+"' where stuID='"+request.getParameter("studID") +"'");
+		smt.execute("update studentApply set statusID='"+statusID+"' where stuID='"+request.getParameter("studID") +"'");
 		con.close();
 		response.sendRedirect("boss-StuApply2.jsp?status=newApprovalStatus&studID="+request.getParameter("studID"));
 	}catch (Exception e){
