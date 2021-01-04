@@ -73,18 +73,8 @@
 	%>
 	<%
 	Statement smt2= con.createStatement();
-	String sql2 = "SELECT statusDes FROM approvalStatus where statusID=0";
+	String sql2 = "SELECT statusDes FROM approvalStatus";
 	ResultSet rs2 = smt2.executeQuery(sql2);
-	%>
-	<%
-	Statement smt3= con.createStatement();
-	String sql3 = "SELECT statusDes FROM approvalStatus where statusID=1";
-	ResultSet rs3 = smt3.executeQuery(sql3);
-	%>
-	<%
-	Statement smt4= con.createStatement();
-	String sql4 = "SELECT statusDes FROM approvalStatus where statusID=2";
-	ResultSet rs4 = smt4.executeQuery(sql4);
 	%>
     <div class="post" align="center" style="margin-left:30px">
       <h1 class="w3-text-teal"><b>¼f®Ö¦W³æ-±JªÙ¥Ó½Ðªí</b></h1>
@@ -105,9 +95,9 @@
                 <tr><td><label for="department">¬ì¨t:<%=rs.getString("department") %></label></td>
                     <td><label for="email">«H½c:<%=rs.getString("email") %></label></td></tr><tr><td></td><td></td></tr>
                 <tr><td><label for="classroom">¯Z¯Å:<%=rs.getString("class") %></label></td>
-                <%while(rs2.next()){%><%while(rs3.next()){%><%while(rs4.next()){%>
-                    <td><label for="Status">¼f®Öª¬ºA:<%=rs2.getString("statusDes")%><%=rs3.getString("statusDes")%><%=rs4.getString("statusDes")%></label></td></tr><tr><td></td><td></td></tr>
-                <%} %> <%} %> <%} %>
+                <%while(rs2.next()){%>
+                    <td><label for="Status">¼f®Öª¬ºA:<%=rs2.getString("statusDes")%></label></td></tr><tr><td></td><td></td></tr>
+                <%} %>
               </table> 
      </div>
            <br>
