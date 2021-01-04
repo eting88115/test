@@ -16,40 +16,30 @@
 <body>
 
 <!-- Header --->
-<%@ include file="menu-boss.jsp" %>
+<%@ include file="menu-tr.jsp" %>
 <!-- Sidebar -->
- <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+ <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left " id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
-     <i class="fa fa-remove"></i>
+     <i class="fa fa-remove "></i>
   </a>
   <div class="activity-time">
           <ul>
          
   <%
-if(session.getAttribute("accessID") == null){
-	out.println("null");
-}
-else{ 
 	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 	Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
-	Statement smt= con.createStatement();
-	String getStuMemberData = "SELECT memberName FROM member WHERE memberID='"+session.getAttribute("accessID")+"'";
-	ResultSet stuMembers = smt.executeQuery(getStuMemberData);
-	if(stuMembers.next()){%>
-		<font color="blue"><%=stuMembers.getString("memberName")%>教官您好!</font>
-	<%}%>
-<%} %>
-      <%
-    Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
 	Statement smt4= con.createStatement();
 	String sql4 = "SELECT activity1_start, activity1_end, activity2, activity3, activity4_start, activity4_end, activity5_start, activity5_end, activity6 FROM ActivityTime ";
 	ResultSet rs4 = smt4.executeQuery(sql4);
-	%>   
+	%>
+	<div class="activity-time">
+          <ul>
+          <font color="blue">宿舍老師 您好!</font>
+          <p color="black">以下為本學期排程時間</p>
           </ul>
-        <form action="identification.jsp">
-        <div class="activity-time" style="font-size:14px;">
+          <div class="activity-time" style="font-size:14px;">
 	<%while(rs4.next()){%>
-	<ul>
+	<ul>  
      <li>送出宿舍申請:<br>
      <%=rs4.getString("activity1_start") %>~<%=rs4.getString("activity1_end") %></li>
      <li>查看通過名單:<br>
@@ -62,25 +52,23 @@ else{
      <%=rs4.getString("activity6") %></li>
      </ul>
     <%} %> 
-          <div class="login-button">
-            <input type="submit" id="logout" value="登出"/>
-            <input type="hidden" name="Logout" value="true"/><br></br>
-          </div>
-        </div>
-        </form>
-  
-        </div>
-        
-     
-  
-  
-
+         </div>
+   </div>
+   </ul>
+   </div>
+   
  </nav>
+
+ <div class="w3-main" style="margin-left:240px">
+
+  <div class="w3-row w3-padding-64">
+    <div class="form-fields d-grid"> 
+    </div>
+  </div>
 
   <div class="w3-row">
     <div class="post" align="center">
       <h1 class="w3-text-teal"><b>公告資訊</b></h1>
-      <a href="#" class="w3-text-cyan w3-hover-red">新增公告</a>
     </div>
     <hr>
         <div class="w3-twothird w3-container">
@@ -104,19 +92,7 @@ else{
               </ul>
             </div>
    </div>
-   
-  <!-- Pagination -->
-  <div class="w3-center w3-padding-32">
-    <div class="w3-bar">
-      <a class="w3-button w3-black" href="#">1</a>
-      <a class="w3-button w3-hover-black" href="#">2</a>
-      <a class="w3-button w3-hover-black" href="#">3</a>
-      <a class="w3-button w3-hover-black" href="#">4</a>
-      <a class="w3-button w3-hover-black" href="#">5</a>
-      <a class="w3-button w3-hover-black" href="#">&raquo;</a>
-    </div>
-  </div>
-
+   </div>
 <!-- Footer -->
 <%@ include file="pageend.jsp" %>
 </html>

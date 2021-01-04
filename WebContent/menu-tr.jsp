@@ -22,7 +22,7 @@
     <a href="boss-room.jsp" class="w3-bar-item w3-button w3-hide-small w3-hover-white">宿舍房位結果</a>
     <a href="https://student.ntunhs.edu.tw/files/11-1002-1545.php?Lang=zh-tw" class="w3-bar-item w3-button w3-hide-small w3-hover-white">校網-宿舍專區</a>
    
-    <a href="boss-front.jsp"><img src="images/LOGO.png" width="200" height="42" style="margin-left:280px"></a>
+    <a href="tr-front.jsp"><img src="images/LOGO.png" width="200" height="42" style="margin-left:280px"></a>
   </div>
 </div>
 </body>

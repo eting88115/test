@@ -6,11 +6,11 @@ public class FolderConfig {
 	
 	public String FilePath(){
 	   //li's 
-		String DBPath="C:\\Users\\elene\\Desktop\\leelab\\WebContent\\assets\\images\\member\\";
+		//String DBPath="C:\\Users\\elene\\Desktop\\leelab\\WebContent\\assets\\images\\member\\";
 	   //Liao's 
 		 //String DBPath="C:\\Users\\Ting\\Desktop\\test\\WebContent\\assets\\images\\member\\";
 		//chieh's
-		//String DBPath="C:\\Users\\USER\\git\\test\\WebContent\\assets\\images\\member\\";
+		String DBPath="C:\\Users\\USER\\git\\test\\WebContent\\assets\\images\\member\\";
 	   return DBPath;		
 	}
 	public String WebsiteRelativeFilePath(){
@@ -18,9 +18,9 @@ public class FolderConfig {
 		   //Liao's 
 			 //String Path="C:\\Users\\Ting\\Desktop\\test\\WebContent\\assets\\images\\member\\";
 		   //li's 
-			 String Path="C:\\Users\\elene\\Desktop\\leelab\\WebContent\\assets\\images\\member\\";
+			 //String Path="C:\\Users\\elene\\Desktop\\leelab\\WebContent\\assets\\images\\member\\";
 		   //chieh's
-			 //String Path="C:\\Users\\USER\\git\\test\\WebContent\\assets\\images\\member\\";
+			 String Path="C:\\Users\\USER\\git\\test\\WebContent\\assets\\images\\member\\";
 			 return Path;		
 	}
 }

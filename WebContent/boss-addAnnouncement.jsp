@@ -17,6 +17,20 @@
 </head>
 <body>
 
+	<%	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+		Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
+	Statement smt= con.createStatement
+			(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+	String sql = "SELECT ID, announcementTime, announcementTitle, announcement, image, category FROM announcement ";
+	 %>
+	
+	<%
+	ResultSet rs = smt.executeQuery(sql);
+	rs.afterLast(); //將指標移至最後一筆資料之後
+	int afterLast =rs.getRow();
+	String ID = request.getParameter("ID");
+	
+	%>
 <!-- Header --->
 <%@ include file="menu-boss.jsp" %>
 <!-- Overlay effect when opening sidebar on small screens -->
@@ -31,7 +45,7 @@
   </div>
 
   <div class="w3-row" style="height:1100px">
-  <form class="login100-form validate-form flex-sb flex-w" action="boss-addAnnouncement_DBSelect.jsp">
+  <form action="boss-addAnnouncement_DBUpdate_info.jsp?" method="post" name="form" >
     <div class="post" style=" margin-left: 600px">
       <h1 class="w3-text-teal"><b>新增公告</b></h1>
     </div>
@@ -44,17 +58,26 @@
                       <label for="announcementTitle">公告標題:</label>
                       <input type="text" name="announcementTitle" placeholder="請輸入標題"  style="width:70%" required>
                    </div> 
+                   
                    <div style="margin-top: 20px">
-                      <label for="announcement">公告內容:</label><br>
-                      <textarea id="announcement" name="announcement" style="width:80%;height:650px;" required></textarea>
-                   </div> 
-                   <div style="margin-top: 20px">
-                      <label for="image">檔案:</label>
-                      <input type="file" id="image" name="image" placeholder="請上傳檔案">
-                   </div>
+                     <div class="position-relative">
+			            
+			            <h3>選擇要上傳的文件:</h3>
+			            <input type="file" name="theFirstFile" size="50" />
+			            
+						<script language="javascript">  
+						//點選提交按鈕觸發下面的函式
+						function pic(){  
+							document.form.action="boss-addAnnouncement_DBUpdate_pic.jsp";
+							document.form.enctype="multipart/form-data";
+							document.form.submit();
+						}  
+						</script>         
+			         </div>
+          
                    <div style="margin-top: 20px">
                       <label for="category">分類:</label>
-                     <select name="category" multiple size="2" required>
+                     <select name="categoryID" multiple size="2" required>
                             <option value="0">宿舍相關法規</option>
                             <option value="1">最新消息</option>
                      </select> 
@@ -62,6 +85,7 @@
                    <div style="margin-top: 20px; margin-left: 300px">
                       <input type="submit"  style="width: 250px "value="儲存">
                    </div>
+            </div>
             </div>
   </form>
   </div>

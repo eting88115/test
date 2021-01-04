@@ -96,10 +96,10 @@ else{
         </div>
             <div class="w3-twothird w3-container">
               <ul>
-              <li><a href="#">[109-04-27]宿舍申請作業資訊</a></li>
-              <li><a href="#">[109-04-27]學生宿舍住宿規則</a></li>
-              <li><a href="#">[109-04-27]學生宿舍生活自治評鑑記點標準</a></li>
-              <li><a href="#">[109-04-27]學生宿舍應注意事項暨生活公約</a></li>
+              <li><a href="https://student.ntunhs.edu.tw/files/13-1002-32677.php">[109-04-27]宿舍申請作業資訊</a></li>
+              <li><a href="https://student.ntunhs.edu.tw/files/13-1002-32678.php">[109-04-27]學生宿舍住宿規則</a></li>
+              <li><a href="https://student.ntunhs.edu.tw/files/13-1002-32679.php">[109-04-27]學生宿舍生活自治評鑑記點標準</a></li>
+              <li><a href="https://student.ntunhs.edu.tw/files/13-1002-30044.php">[109-04-27]學生宿舍應注意事項暨生活公約</a></li>
               </ul>
             </div>
         <div class="w3-twothird w3-container">
@@ -107,25 +107,14 @@ else{
         </div>
             <div class="w3-twothird w3-container">
               <ul>
-              <li><a href="#">[109-05-01]學生宿舍住宿費調漲相關說明</a></li>
-              <li><a href="#">[109-05-01]欲以低收入戶或中低收入戶資格申請宿舍保障或優惠注意事項</a></li>
-              <li><a href="#">[109-04-28]109學年度校本部學生宿舍申請審核結果公告</a></li>
-              <li><a href="#">[109-04-11]109學年度校本部學生宿舍開放申請床位數</a></li>
+              <li><a href="https://student.ntunhs.edu.tw/files/13-1002-47525.php?Lang=zh-tw">[109-05-01]學生宿舍住宿費調漲相關說明</a></li>
+              <li><a href="https://student.ntunhs.edu.tw/files/13-1002-43528.php?Lang=zh-tw">[109-05-01]欲以低收入戶或中低收入戶資格申請宿舍保障或優惠注意事項</a></li>
               </ul>
             </div>
    </div>
    
   <!-- Pagination -->
-  <div class="w3-center w3-padding-32">
-    <div class="w3-bar">
-      <a class="w3-button w3-black" href="#">1</a>
-      <a class="w3-button w3-hover-black" href="#">2</a>
-      <a class="w3-button w3-hover-black" href="#">3</a>
-      <a class="w3-button w3-hover-black" href="#">4</a>
-      <a class="w3-button w3-hover-black" href="#">5</a>
-      <a class="w3-button w3-hover-black" href="#">&raquo;</a>
-    </div>
-  </div>
+  
 </div>
 <!-- Footer -->
 <%@ include file="pageend.jsp" %>

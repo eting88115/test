@@ -1,9 +1,9 @@
-<%@ page language="java" pageEncoding="utf-8"%>
+<%@ page language="java"  contentType="text/html; charset=BIG5" pageEncoding="utf-8"%>
 <%@page import="java.sql.*"%>
 <!DOCTYPE html>
 <html lang="tc">
 <head>
-<meta charset="utf-8">
+<meta charset="BIG5">
 <title>pageend</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css\styles.css" >
@@ -15,8 +15,8 @@
 <body>
 <!-- Footer -->
   
-  <footer id="myFooter" style="margin-left:250px">
-    <div class="w3-container w3-theme-l2 w3-padding-32">
+  <footer id="myFooter" >
+    <div class="w3-container w3-theme-l2 w3-padding-32 "style="margin-left:240px">
       <h5>Copyright ©2020國立臺北護理健康大學健康事業管理系所 醫療資訊管理學程 設計團隊：黃荷心。謝芸蘋。廖于婷。吳宜靜。 指導：李麗惠老師 請尊重智慧財產權，勿上傳未經授權之檔案資料。</h5>
     </div>
 
