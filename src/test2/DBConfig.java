@@ -14,9 +14,9 @@ public class DBConfig {
 		//liao's
 		//String DBPath="C:\\Users\\Ting\\Desktop\\test\\Database.accdb";
 		//chieh's
-		String DBPath="C:\\Users\\USER\\git\\test\\Database.accdb";
+		//String DBPath="C:\\Users\\USER\\git\\test\\Database.accdb";
 		//Jing's
-		//String DBPath="C:\\Users\\elene\\Desktop\\test\\test\\test\\Database.accdb";
+		String DBPath="C:\\Users\\elene\\Desktop\\test\\test\\test\\Database.accdb";
 		//yun's
 		//String DBPath="C:\\Users\\yun ping\\Desktop\\新增資料夾\\test\\Database.accdb";
 	   return DBPath;		

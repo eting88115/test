@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="BIG5">
-<title>apply</title>
+<title>about</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css\styles.css" >
 <link rel="stylesheet" href="css\styles2.css" >
@@ -25,13 +25,13 @@
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
 <%
 	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-    Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
+	Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
 	Statement smt= con.createStatement();
-	String sql = "SELECT * FROM stuData";
+	String sql = "SELECT stuID,stuName,subject,stuclass,phone,address,email FROM stuData";
 	ResultSet rs = smt.executeQuery(sql);
 	rs.next();
 	%>
-	
+<form action="stu-about.jsp" method="post">
 <div class="w3">
 
   <div class="w3-row w3-padding-64">
@@ -40,9 +40,9 @@
   </div>
   
   <div class="w3-row" style="height:450px">
-  <form class="login100-form validate-form flex-sb flex-w" action="apply-stu_DBUpdate.jsp?stuID=<%=request.getParameter("stuID")%>">
+  <form class="login100-form validate-form flex-sb flex-w" action="stu-about_DBUpdate.jsp?stuID=<%=request.getParameter("stuID")%>">
     <div class="post" style=" margin-left: 600px">
-      <h1 class="w3-text-teal"><b>宿舍申請表</b></h1>
+      <h1 class="w3-text-teal"><b>個人資料修改</b></h1>
 
     </div>
          <table>
@@ -53,30 +53,23 @@
               <tr><td><label for="phone">電話:</label><input type="text" name="phone" placeholder="請輸入電話" value="<%=rs.getString("phone") %>"></td>
                   <td><label for="address">地址:</label><input type="text" name="address" placeholder="請輸入地址" value="<%=rs.getString("address") %>"></td></tr><tr><td></td><td></td></tr>
               <tr><td><label for="email">信箱:</label><input type="text" name="email" placeholder="請輸入電子郵件" value="<%=rs.getString("email") %>"></td>
-              <tr><td><div >
-            				<img src="<%=rs.getString("image") %>" alt="">
-            				<h3>選擇要戶籍的文件:</h3>
-            				<input type="file" name="theFirstFile" size="50" />
-            				<input type="button" onClick="javascript:image();" name=submitButton value="上傳" />
-							<script language="javascript">  
-								//點選提交按鈕觸發下面的函式
-							function pic(){  
-							document.form.action="apply-stu_DBUpdate_pic.jsp";
-							document.form.enctype="multipart/form-data";
-							document.form.submit();
-										}  
-							</script>         
-         				</div>              
+              <tr><td>              
                		</td></tr><tr><td></td><td></td></tr>
          </table>
          <div class="login-button2">
-            <input type="submit" value="確認申請" onclick="location.href='finishapply-stu.jsp'">
-            <input type="reset" value="取消申請" onclick="location.href='stu-front.jsp'">
+         <%if(session.getAttribute("accessId")!=null){
+          		if(session.getAttribute("accessId").equals(rs.getString("stuID"))) {%>
+          			<a href="stu-about.jsp?stuID=<%=rs.getString("stuID")%>"  class="btn btn-style btn-effect">編輯</a>
+		  		<%}
+          }%>
+            <input type="submit" value="確認編輯" onclick="location.href='finishabout.jsp'">
+            <input type="reset" value="取消編輯" onclick="location.href='stu-front.jsp'">
          </div>
   </form>
   </div>
   
   </div>
+  </form>
 <!-- Footer -->
 <%@ include file="pageend2.jsp" %>
 </html>

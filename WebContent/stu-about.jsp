@@ -39,7 +39,7 @@
   </div>
   
   <div class="w3-row" style="height:450px">
-  <form class="login100-form validate-form flex-sb flex-w" action="stu-about_DBSelect.jsp?stuID=<%=request.getParameter("stuID")%>">
+  <form class="login100-form validate-form flex-sb flex-w" action="stu-about_DBUpdate.jsp?stuID=<%=request.getParameter("stuID")%>">
     <div class="post" style=" margin-left: 600px">
       <h1 class="w3-text-teal"><b>個人資料修改</b></h1>
 

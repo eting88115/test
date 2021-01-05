@@ -2,8 +2,17 @@
 <%@page pageEncoding="BIG5"%>
 <%@page import="java.sql.*"%>
 <jsp:useBean id='objDBConfig' scope='session' class='test2.DBConfig' />
+<jsp:useBean id='objFolderConfig' scope='session' class='test22.FolderConfig' />
 <!DOCTYPE html>
+
 <html>
+<head>
+  <meta charset="BIG5">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>LeeLab Web</title>
+  <link href="//fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap" rel="stylesheet">
+</head>
 <body>
 <%
 	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
@@ -16,10 +25,9 @@
 	String phon = new String(request.getParameter("phone").getBytes("ISO-8859-1"));
 	String addres = new String(request.getParameter("address").getBytes("ISO-8859-1"));
 	String emai = new String(request.getParameter("email").getBytes("ISO-8859-1"));
-	String roomNumbe = new String(request.getParameter("roomNumber").getBytes("ISO-8859-1"));
-	String position = new String(request.getParameter("position"));
-	smt.executeUpdate("UPDATE stuData SET stuID ='" + stuI+"', stuName ='" + stuNam+"', subject ='" + subjec +"', stuclass ='" + stuclas +"', phone ='" + phon+"', address ='" + addres+"', email ='" + emai+"', roomNumber ='" + roomNumbe+"'WHERE stuID ='" + request.getParameter("stuID")+"' ");
+	smt.executeUpdate("UPDATE stuData SET stuID ='" + stuI+"', stuName ='" + stuNam+"', subject ='" + subjec +"', stuclass ='" + stuclas +"', phone ='" + phon+"', address ='" + addres+"', email ='" + emai+"'WHERE stuID ='" + request.getParameter("stuID")+"' ");
 	response.sendRedirect("finishapply-stu.jsp?stuID="+request.getParameter("stuID")+"");
 	%>
 </body>
+
 </html>
