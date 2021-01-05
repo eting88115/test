@@ -36,7 +36,7 @@
 	String sql = "SELECT activity1_start, activity1_end, activity2, activity3, activity4_start, activity4_end, activity5_start, activity5_end, activity6 FROM ActivityTime ";
 	ResultSet rs = smt.executeQuery(sql);
 	rs.next();
-	%>
+	%>	
 <form action="boss-ActivityTime_DBUpdate.jsp" method="post">
 
   <div class="w3-row" style="height:400px">

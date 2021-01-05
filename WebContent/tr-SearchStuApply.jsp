@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="BIG5">
-<title>boss-SearchStuApply</title>
+<title>tr-SearchStuApply</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css\styles.css" >
 <link rel="stylesheet" href="css\styles2.css" >
@@ -18,7 +18,7 @@
 <body>
 
 <!-- Header --->
-	<%@ include file="menu-boss.jsp" %>
+	<%@ include file="menu-tr.jsp" %>
 <!-- Sidebar -->
 
  
@@ -40,7 +40,7 @@
 	</div>
 	
 	<div class="search-studentName" style="margin-left: 515px;margin-top: 50px">
-	<form action="boss-StuApply.jsp" method="post">
+	<form action="tr-StuApply.jsp" method="post">
 	<%
 	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 	Connection con = DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
