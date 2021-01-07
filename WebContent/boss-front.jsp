@@ -34,7 +34,7 @@
           <font color="blue">後臺管理者 您好!</font>
           <p color="black">以下為本學期排程時間</p>
           </ul>
-          <div class="activity-time" style="font-size:14px;">
+          <div class="activity-time" style="font-size:18px;">
 	<%while(rs4.next()){%>
 	<ul>  
      <li>送出宿舍申請:<br>

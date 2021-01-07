@@ -47,7 +47,7 @@ else{
 	%>   
           </ul>
         <form action="identification.jsp">
-        <div class="activity-time" style="font-size:14px;">
+        <div class="activity-time" style="font-size:18px;">
 	<%while(rs4.next()){%>
 	<ul>  
      <li>°e¥X±JªÙ¥Ó½Ð:<br>
