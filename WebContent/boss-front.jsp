@@ -26,7 +26,7 @@
 	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 	Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
 	Statement smt4= con.createStatement();
-	String sql4 = "SELECT activity1_start, activity1_end, activity2, activity3, activity4_start, activity4_end, activity5_start, activity5_end, activity6 FROM ActivityTime ";
+	String sql4 = "SELECT * FROM ActivityTime ";
 	ResultSet rs4 = smt4.executeQuery(sql4);
 	%>
 	<div class="activity-time">
@@ -38,15 +38,15 @@
 	<%while(rs4.next()){%>
 	<ul>  
      <li>送出宿舍申請:<br>
-     <%=rs4.getString("activity1_start") %>~<%=rs4.getString("activity1_end") %></li>
+     <%=rs4.getDate("activity1_start") %>~<%=rs4.getDate("activity1_end") %></li>
      <li>查看通過名單:<br>
-     <%=rs4.getString("activity2") %></li>
+     <%=rs4.getDate("activity2") %></li>
      <li>第一階段床位申請:<br>
-     <%=rs4.getString("activity4_start") %>~<%=rs4.getString("activity4_end") %></li>
+     <%=rs4.getDate("activity4_start") %>~<%=rs4.getDate("activity4_end") %></li>
      <li>第二階段床位申請:<br>
-     <%=rs4.getString("activity5_start") %>~<%=rs4.getString("activity5_end") %></li>
+     <%=rs4.getDate("activity5_start") %>~<%=rs4.getDate("activity5_end") %></li>
      <li>房位結果:<br>
-     <%=rs4.getString("activity6") %></li>
+     <%=rs4.getDate("activity6") %></li>
      </ul>
     <%} %> 
          </div>
@@ -132,14 +132,14 @@
             <table class="announcement">
                   <tr> 
                      <th class="text-center" scope="col" width="2%">編號</th>
-                     <th class="text-center" scope="col" width="2%">公告日期</th> 
+                     <th class="text-center" scope="col" width="6%">公告日期</th> 
                      <th class="text-center" scope="col" width="30%">公告標題</th>
                      <th class="text-center" scope="col" width="2%">操作</th>
                   </tr>
                 <%while(rs2.next()){%>  
                       <tr> 
                          <td><%=rs2.getString("ID") %></td> 
-                         <td><%=rs2.getString("announcementTime") %></td> 
+                         <td><%=rs2.getDate("announcementTime") %></td> 
                          <td><%=rs2.getString("announcementTitle")%></td>
                          <td><button class="edit">刪除</button></td>
                       </tr>
@@ -164,14 +164,14 @@
             <table class="announcement">
                   <tr> 
                      <th class="text-center" scope="col" width="2%">編號</th>
-                     <th class="text-center" scope="col" width="2%">公告日期</th> 
+                     <th class="text-center" scope="col" width="6%">公告日期</th> 
                      <th class="text-center" scope="col" width="30%">公告標題</th>
                      <th class="text-center" scope="col" width="2%">操作</th>
                   </tr>
                 <%while(rs3.next()){%>  
                       <tr> 
                          <td><%=rs3.getString("ID") %></td> 
-                         <td><%=rs3.getString("announcementTime") %></td> 
+                         <td><%=rs3.getDate("announcementTime") %></td> 
                          <td><%=rs3.getString("announcementTitle")%></td>
                          <td><button class="edit">刪除</button></td>
                       </tr>

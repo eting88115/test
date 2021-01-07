@@ -51,15 +51,15 @@ else{
 	<%while(rs4.next()){%>
 	<ul>  
      <li>送出宿舍申請:<br>
-     <%=rs4.getString("activity1_start") %>~<%=rs4.getString("activity1_end") %></li>
+     <%=rs4.getDate("activity1_start") %>~<%=rs4.getDate("activity1_end") %></li>
      <li>查看通過名單:<br>
-     <%=rs4.getString("activity2") %></li>
+     <%=rs4.getDate("activity2") %></li>
      <li>第一階段床位申請:<br>
-     <%=rs4.getString("activity4_start") %>~<%=rs4.getString("activity4_end") %></li>
+     <%=rs4.getDate("activity4_start") %>~<%=rs4.getDate("activity4_end") %></li>
      <li>第二階段床位申請:<br>
-     <%=rs4.getString("activity5_start") %>~<%=rs4.getString("activity5_end") %></li>
+     <%=rs4.getDate("activity5_start") %>~<%=rs4.getDate("activity5_end") %></li>
      <li>房位結果:<br>
-     <%=rs4.getString("activity6") %></li>
+     <%=rs4.getDate("activity6") %></li>
      </ul>
     <%} %> 
           <div class="login-button">
