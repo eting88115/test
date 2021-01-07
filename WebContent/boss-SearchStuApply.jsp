@@ -45,20 +45,20 @@
 	Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 	Connection con = DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
 	Statement smt= con.createStatement();
-	String sql = "SELECT stuName FROM studentApply";
+	String sql = "SELECT * FROM studentApply";
 	ResultSet rs = smt.executeQuery(sql);
 	%>
 	<label for="search-student" style="font-weight: bold ;font-size: 20px ;">請選擇學生姓名:</label>
-	<select name="name" style="width:90px; height:25px; font-size: 18px">
+	<select name="stuID" style="width:90px; height:25px; font-size: 18px">
            <%while(rs.next()){ %>
-              <option value="<%=rs.getString("stuName")%>"><%=rs.getString("stuName") %></option>
+              <option value="<%=rs.getString("stuID")%>"><%=rs.getString("stuName") %></option>
           <%}con.close();%>   
  	</select>
+ 	
 	<input type="submit" value="查詢">
 	</form>
 	</div>
 	</div>
-	
 	</div>
 <!-- Footer -->
 <%@ include file="pageend2.jsp" %>

@@ -4,6 +4,8 @@
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
 <jsp:useBean id='objFolderConfig' scope='session' class='test22.FolderConfig' />
 <jsp:useBean id='objDBConfig' scope='session' class='test2.DBConfig' />
+<% String stuId = new String(request.getParameter("stuId")); %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,16 +21,17 @@
 	String fileName =theMultipartRequest.getFilesystemName (fieldName);
 	String contentType = theMultipartRequest.getContentType (fieldName) ;
 	
+	
 	File theFile = theMultipartRequest.getFile(fieldName) ;
-			out.println("檔案名稱:"+fileName+"<br>") ;
-			out.println("檔案型態:"+contentType+"<br>");
 			out.println("檔案路徑:"+theFile.getAbsolutePath()+"<br>") ;
 			Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 			Connection con=DriverManager.getConnection("jdbc:ucanaccess://"+objDBConfig.FilePath()+";");
 			Statement smt= con.createStatement();
-			smt.executeUpdate("UPDATE studentApply SET pic ='"+objFolderConfig.WebsiteRelativeFilePath()+fileName+ "' WHERE stuId ='" + session.getAttribute("accessId")+"' ");
-			response.sendRedirect("apply-stu.jsp?stuId="+session.getAttribute("accessId")+"");
-	}		
+			smt.executeUpdate("UPDATE studentApply SET pic ='"+objFolderConfig.WebsiteRelativeFilePath()+fileName+ "' WHERE stuId ='"+request.getParameter("stuId")+"' ");
+			
+	}
+	response.sendRedirect("boss-StuApply.jsp?stuId="+request.getParameter("stuId")+"");
 %>
+
 </body>
 </html>
